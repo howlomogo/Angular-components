@@ -1,0 +1,167 @@
+@import "bootstrap";
+
+$color--primary: #FFC107;
+
+$color--text: #2C2C2C;
+$color--para: #8D8D8D;
+$color--grey-light: #BDBDBD;
+
+body {
+	color: $color--text;
+}
+h1,h2, h3,h4,h5,h6 {
+	font-family: 'Lato', sans-serif;
+	line-height: normal;
+}
+
+p,a {
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: normal;
+	color: $color--para;
+}
+
+p {
+	font-weight: 300;
+	letter-spacing: 0.5;
+	line-height: 1.35rem;
+}
+
+h1 {
+	font-size: 4rem;
+	font-weight: 700;
+	letter-spacing: 2px;
+	@media (max-width: 992px) {
+		line-height: normal !important;
+		font-size: 3rem;
+	}
+	@media (max-width: 768px) {
+		line-height: normal !important;
+		font-size: 2rem;
+	}
+}
+
+h2 {
+	font-size: 3rem;
+	font-weight: 700;
+	letter-spacing: 3px;
+	@media (max-width: 768px) {
+		font-size: 1.75rem;
+	}
+}
+
+h3 {
+	@media (max-width: 768px) {
+		font-size: 1.5rem;
+	}
+}
+
+h4 {
+	@media (max-width: 768px) {
+		font-size: 1.25rem;
+	}
+}
+
+input, textarea {
+	display: block;
+	width: 100%;
+	border: 2px solid #E0E0E0;
+	letter-spacing: 1px;
+	transition: 0.5s border;
+	outline: none;
+
+	&:focus {
+		border: 2px solid $color--primary;
+	}
+
+	@extend .p-1;
+	@extend .px-2;
+}
+
+.color--primary {
+	color: $color--primary !important;
+}
+
+.container-small {
+    max-width: 100%;
+    width: 480px;
+}
+
+.hr--primary {
+	border: none;
+	border-top: 1px solid $color--primary;
+	width: 80px;
+	margin: 0 auto 16px;
+
+	&.hr--left {
+		margin: 0;
+	}
+}
+
+.btn {
+	background-color: $color--primary;
+	border: none;
+	border-radius: 5px;
+	outline: none !important;
+	font-family: 'Lato', sans-serif;
+	color: #ffffff;
+	line-height: normal;
+	padding: 8px 42px 12px;
+	transition: background-color 0.3s;
+	cursor: pointer;
+
+	&.inverted {
+		border: solid 3px #ffffff;
+		background-color: transparent;
+	}
+
+	&:hover {
+		background-color: lighten($color--primary,10%);
+		animation: pulse 0.3s;
+		-webkit-animation: pulse 0.3s;
+		-moz-animation: pulse 0.3s;
+		-o-animation: pulse 10.3s;
+	}
+}
+
+//- Navigation
+.navbar-nav {
+	.nav-item {
+		a.nav-link {
+			font-family: 'Lato', sans-serif;
+			font-weight: bold;
+			font-size: 0.85rem;
+			padding: 1.5rem 1.25rem;
+		    -webkit-transition: color 0.5s;
+		    transition: color 0.5s;
+		    letter-spacing: 1px;
+
+			@media (max-width: 992px) {
+				text-align: center;	
+			}
+		}
+		&:last-child {
+			a.nav-link {
+				@media (min-width: 992px) {
+					padding-right: 0px !important;
+				}
+			}
+		}
+	}
+}
+
+.navbar-toggler {
+	border: none;
+	cursor: pointer;
+	outline: none !important;
+}
+
+.navbar--container {
+	position: relative;
+	z-index:1;
+	background-color: #ffffff;
+	// box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.navbar-toggler {
+	top: 20px;
+}
