@@ -2,6 +2,8 @@ html(ng-app="app")
 	head
 		include /_includes/_header
 	body(ng-controller="appcontroller")
-		include /_includes/_navigation		
+		include /_includes/_navigation
+		div(ng-repeat="home in properties | filter:{id: selectedProperty}")
+			h1 {{ home.town }}
 
 		include /_includes/_footer
