@@ -1,7 +1,7 @@
 html(ng-app="app")
 	head
 		include /_includes/_header
-	body(ng-controller="appcontroller")
+	body(ng-controller="appcontroller" style="background-color: #FAFAFA;")
 		include /_includes/_navigation
 		
 
@@ -14,7 +14,7 @@ html(ng-app="app")
 								h5 Cottage Search
 
 								label Location
-								select(ng-model="resultsOrder" ng-options="x.county for x in properties" name='location')
+								select(ng-model="locationFilter" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
 
 
 					.col-md-9
@@ -22,24 +22,55 @@ html(ng-app="app")
 							.col-md-12
 								h3 Your Results {{ properties.length }} properties found
 						.row.py-4
-							.col-md-12
+							.col-sm-6
 								select(ng-model="resultsOrder")
 									option(value="town") Town
 									option(value="county") County
 									option(value="id") Id
 									option(value="cost") Cost
+							.col-sm-6.text-right
+								select(ng-model="resultsOrder")
+									option(value="town") 10
+									option(value="county") 20
 
 
-						.row.py-2(ng-repeat="home in properties | orderBy : resultsOrder")
+						.row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: {county: locationFilter}" style="background-color: #ffffff;")
 							.col-md-5
 								img.mw-100(ng-src="{{ home.image }}" alt="Home Image")
 
-							.col-md-4
+							.col-md-5
 								h5 {{ home.name }}
 								h5 {{ home.town }}, {{ home.county }}
 
 								p Sleeps {{ home.sleeps }} | Bedrooms {{ home.bedrooms }}
-							.col-md-3
-								h3 From £{{ home.cost }}
+								.ion.ion-star.d-inline-block(ng-repeat="i in getRating(home.rating) track by $index")
+								hr
+								.row
+									.col-md-6
+										p.mb-1
+											span.ion.mr-1(ng-class="home.features.pets ? 'ion-checkmark' : 'ion-close'")
+											| Pets Allowed
+										p.mb-1
+											span.ion.mr-1(ng-class="home.features.wifi ? 'ion-checkmark' : 'ion-close'")
+											| Wifi
+										p.mb-1
+											span.ion.mr-1(ng-class="home.features.swimming ? 'ion-checkmark' : 'ion-close'")
+											| Swimming Pool
+									.col-md-6
+										p.mb-1
+											span.ion.mr-1(ng-class="home.features.washing ? 'ion-checkmark' : 'ion-close'")
+											| Washing
+										p.mb-1
+											span.ion.mr-1(ng-class="home.features.fireplace ? 'ion-checkmark' : 'ion-close'")
+											| Fireplace
+										p.mb-1
+											span.ion.mr-1(ng-class="home.features.hottub ? 'ion-checkmark' : 'ion-close'")
+											| Hot Tub
+
+
+							.col-md-2.text-center
+								h4 £{{ home.cost }}
+								h6 For 7 nights
+								button.btn View
 
 		include /_includes/_footer
