@@ -13,8 +13,27 @@ html(ng-app="app")
 							.col-md-12
 								h5 Cottage Search
 
-								label Location
-								select(ng-model="locationFilter" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
+								div
+									label Location
+									select(ng-model="locationFilter" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
+
+								div
+									label Sleeps
+									select(ng-model="sleepsFilter" ng-options="x.sleeps as x.sleeps for x in properties | unique: 'sleeps'" name='sleeps')
+
+
+								h5 Filter Options
+
+								div
+									h6 Price
+									//- label 100
+									//- input(type="checkbox" data-ng-model="price100")
+									//- label 200
+									//- input(type="checkbox" data-ng-model="price200")
+									label £0 - £99
+									input(type="checkbox" data-ng-model="costCheckboxs.one")
+									label £100 - £199
+									input(type="checkbox" data-ng-model="costCheckboxs.two")
 
 
 					.col-md-9
@@ -34,7 +53,9 @@ html(ng-app="app")
 									option(value="county") 20
 
 
-						.row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: {county: locationFilter}" style="background-color: #ffffff;")
+						//- .row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: {county: locationFilter} | filter: {sleeps: sleepsFilter} | filter: costFilter" style="background-color: #ffffff;")
+						.row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: {county: locationFilter} | filter: costFilter" style="background-color: #ffffff;")
+
 							.col-md-5
 								img.mw-100(ng-src="{{ home.image }}" alt="Home Image")
 
