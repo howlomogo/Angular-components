@@ -1,7 +1,7 @@
 html(ng-app="app")
 	head
 		include /_includes/_header
-	body(ng-controller="appcontroller" style="background-color: #FAFAFA;")
+	body(ng-controller="appcontroller" style="background-color: #F5F5F5;")
 		include /_includes/_navigation
 		
 
@@ -11,30 +11,87 @@ html(ng-app="app")
 					.col-md-3
 						.row
 							.col-md-12
-								h5 Cottage Search
+								.results--filter-box.mb-2
+									h5 Cottage Search
 
-								div
-									label Location
-									select(ng-model="locationFilter" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
+									.result--filter-box--inner
+										label Location
+										select.mb-2(ng-model="locationFilter" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
 
-								div
-									label Sleeps
-									select(ng-model="sleepsFilter" ng-options="x.sleeps as x.sleeps for x in properties | unique: 'sleeps'" name='sleeps')
+										label Sleeps
+										select.mb-2(ng-model="sleepsFilter" ng-options="x.sleeps as x.sleeps for x in properties | unique: 'sleeps'" name='sleeps')
 
+								.results--filter-box
+									h5 Filter Options
 
-								h5 Filter Options
+									.result--filter-box--inner.mb-2
+										label Price
+										div
+											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c0")
+											label.d-inline-block.mb-0 £0 - £99
+										div
+											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c1")
+											label.d-inline-block.mb-0 £100 - £199
+										div
+											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c2")
+											label.d-inline-block.mb-0 £200 - £299
 
-								div
-									h6 Price
-									//- label 100
-									//- input(type="checkbox" data-ng-model="price100")
-									//- label 200
-									//- input(type="checkbox" data-ng-model="price200")
-									label £0 - £99
-									input(type="checkbox" data-ng-model="costCheckboxs.one")
-									label £100 - £199
-									input(type="checkbox" data-ng-model="costCheckboxs.two")
+									.result--filter-box--inner.mb-2
+										label Features
+										div
+											input.mr-1(type="checkbox" ng-false-value="''" data-ng-model="filterPets")
+											label.d-inline-block.mb-0 Pets Allowed {{ filterPets }}
+										div
+											input.mr-1(type="checkbox"  ng-false-value="''" data-ng-model="filterWifi")
+											label.d-inline-block.mb-0 Wifi
+										div
+											input.mr-1(type="checkbox"  ng-false-value="''" data-ng-model="filterSwimming")
+											label.d-inline-block.mb-0 Swimming Pool
+										div
+											input.mr-1(type="checkbox"  ng-false-value="''" data-ng-model="filterWashing")
+											label.d-inline-block.mb-0 Washing Machine
+										div
+											input.mr-1(type="checkbox"  ng-false-value="''" data-ng-model="filterFireplace")
+											label.d-inline-block.mb-0 Fireplace
+										div
+											input.mr-1(type="checkbox"  ng-false-value="''" data-ng-model="filterHottub")
+											label.d-inline-block.mb-0 Hot Tub
 
+									.result--filter-box--inner.mb-2
+										label Bedrooms
+										div
+											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c0")
+											label.d-inline-block.mb-0 1
+										div
+											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c1")
+											label.d-inline-block.mb-0 2
+										div
+											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c2")
+											label.d-inline-block.mb-0 3
+										div
+											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c0")
+											label.d-inline-block.mb-0 4
+										div
+											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c1")
+											label.d-inline-block.mb-0 5
+
+									.result--filter-box--inner
+										label Customer Rating
+										div
+											input.mr-1(type="checkbox" data-ng-model="ratingCheckboxs.r0")
+											label.d-inline-block.mb-0 0 - 2
+										div
+											input.mr-1(type="checkbox" data-ng-model="ratingCheckboxs.r1")
+											label.d-inline-block.mb-0 3 - 4
+										div
+											input.mr-1(type="checkbox" data-ng-model="ratingCheckboxs.r2")
+											label.d-inline-block.mb-0 5 - 6
+										div
+											input.mr-1(type="checkbox" data-ng-model="ratingCheckboxs.r3")
+											label.d-inline-block.mb-0 7 - 8
+										div
+											input.mr-1(type="checkbox" data-ng-model="ratingCheckboxs.r4")
+											label.d-inline-block.mb-0 9 - 10
 
 					.col-md-9
 						.row
@@ -54,7 +111,7 @@ html(ng-app="app")
 
 
 						//- .row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: {county: locationFilter} | filter: {sleeps: sleepsFilter} | filter: costFilter" style="background-color: #ffffff;")
-						.row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: {county: locationFilter} | filter: costFilter" style="background-color: #ffffff;")
+						.row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: costFilter | filter:ratingFilter:'blah' | filter: {features: {pets: filterPets}} | filter: {features: {wifi: filterWifi}} | filter: {features: {swimming: filterSwimming}} | filter: {features: {washing: filterWashing}} | filter: {features: {fireplace: filterFireplace}} | filter: {features: {hottub: filterHottub}}" style="background-color: #ffffff;")
 
 							.col-md-5
 								img.mw-100(ng-src="{{ home.image }}" alt="Home Image")

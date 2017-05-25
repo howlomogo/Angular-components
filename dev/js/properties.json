@@ -1,0 +1,97 @@
+[
+	{
+		"id" : 1,
+		"name" : "Windmill Cottage Annex",
+		"town": "cosham",
+		"county": "hampshire",
+		"cost": 99,
+		"image": "assets/test-house.jpg",
+		"sleeps": 1,
+		"bedrooms": 2,
+		"rating": 10,
+		"features": {
+			"pets": true,
+			"wifi": true,
+			"swimming": false,
+			"washing": true,
+			"fireplace": false,
+			"hottub": true
+		}
+	},
+	{
+		"id" : 2,
+		"name" : "Ultimate Cottage",
+		"town": "newquay",
+		"county": "cornwall",
+		"cost": 200,
+		"image": "assets/test-house.jpg",
+		"sleeps": 2,
+		"bedrooms": 2,
+		"rating": 9,
+		"features": {
+			"pets": true,
+			"wifi": false,
+			"swimming": true,
+			"washing": false,
+			"fireplace": false,
+			"hottub": false
+		}
+	},
+	{
+		"id" : 3,
+		"name" : "pets false",
+		"town": "blahland",
+		"county": "northumberland",
+		"cost": 100,
+		"image": "assets/test-house.jpg",
+		"sleeps": 3,
+		"bedrooms": 2,
+		"rating": 4,
+		"features": {
+			"pets": false,
+			"wifi": true,
+			"swimming": true,
+			"washing": true,
+			"fireplace": false,
+			"hottub": true
+		}
+	},
+	{
+		"id" : 4,
+		"name" : "Some Random Cottage",
+		"town": "drayton",
+		"county": "hampshire",
+		"cost": 289,
+		"image": "assets/test-house.jpg",
+		"sleeps": 4,
+		"bedrooms": 2,
+		"rating": 7,
+		"features": {
+			"pets": false,
+			"wifi": true,
+			"swimming": true,
+			"washing": true,
+			"fireplace": true,
+			"hottub": true
+		}
+	},
+	{
+		"id" : 5,
+		"name" : "Some Random Cottage",
+		"town": "southsea",
+		"county": "hampshire",
+		"cost": 200,
+		"image": "assets/test-house.jpg",
+		"sleeps": 4,
+		"bedrooms": 2,
+		"rating": 3,
+		"features": {
+			"pets": true,
+			"wifi": true,
+			"swimming": true,
+			"washing": true,
+			"fireplace": false,
+			"hottub": true
+		}
+	}
+]
