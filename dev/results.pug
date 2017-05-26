@@ -39,58 +39,58 @@ html(ng-app="app")
 									.result--filter-box--inner.mb-2
 										label Features
 										div
-											input.mr-1(type="checkbox" ng-false-value="''" data-ng-model="filterPets")
-											label.d-inline-block.mb-0 Pets Allowed {{ filterPets }}
+											input.mr-1(type="checkbox" data-ng-model="featuresFilterCb.pets")
+											label.d-inline-block.mb-0 Pets Allowed {{ featuresFilterCb.pets }}
 										div
-											input.mr-1(type="checkbox"  ng-false-value="''" data-ng-model="filterWifi")
+											input.mr-1(type="checkbox" data-ng-model="featuresFilterCb.wifi")
 											label.d-inline-block.mb-0 Wifi
 										div
-											input.mr-1(type="checkbox"  ng-false-value="''" data-ng-model="filterSwimming")
+											input.mr-1(type="checkbox" data-ng-model="featuresFilterCb.swimming")
 											label.d-inline-block.mb-0 Swimming Pool
 										div
-											input.mr-1(type="checkbox"  ng-false-value="''" data-ng-model="filterWashing")
+											input.mr-1(type="checkbox" data-ng-model="featuresFilterCb.washing")
 											label.d-inline-block.mb-0 Washing Machine
 										div
-											input.mr-1(type="checkbox"  ng-false-value="''" data-ng-model="filterFireplace")
+											input.mr-1(type="checkbox" data-ng-model="featuresFilterCb.fireplace")
 											label.d-inline-block.mb-0 Fireplace
 										div
-											input.mr-1(type="checkbox"  ng-false-value="''" data-ng-model="filterHottub")
+											input.mr-1(type="checkbox" data-ng-model="featuresFilterCb.hottub")
 											label.d-inline-block.mb-0 Hot Tub
 
 									.result--filter-box--inner.mb-2
 										label Bedrooms
 										div
-											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c0")
+											input.mr-1(type="checkbox" data-ng-model="bedroomFilterCb.b1")
 											label.d-inline-block.mb-0 1
 										div
-											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c1")
+											input.mr-1(type="checkbox" data-ng-model="bedroomFilterCb.b2")
 											label.d-inline-block.mb-0 2
 										div
-											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c2")
+											input.mr-1(type="checkbox" data-ng-model="bedroomFilterCb.b3")
 											label.d-inline-block.mb-0 3
 										div
-											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c0")
+											input.mr-1(type="checkbox" data-ng-model="bedroomFilterCb.b4")
 											label.d-inline-block.mb-0 4
 										div
-											input.mr-1(type="checkbox" data-ng-model="costCheckboxs.c1")
+											input.mr-1(type="checkbox" data-ng-model="bedroomFilterCb.b5")
 											label.d-inline-block.mb-0 5
 
 									.result--filter-box--inner
 										label Customer Rating
 										div
-											input.mr-1(type="checkbox" data-ng-model="ratingCheckboxs.r0")
+											input.mr-1(type="checkbox" data-ng-model="ratingFilterCb.r0")
 											label.d-inline-block.mb-0 0 - 2
 										div
-											input.mr-1(type="checkbox" data-ng-model="ratingCheckboxs.r1")
+											input.mr-1(type="checkbox" data-ng-model="ratingFilterCb.r1")
 											label.d-inline-block.mb-0 3 - 4
 										div
-											input.mr-1(type="checkbox" data-ng-model="ratingCheckboxs.r2")
+											input.mr-1(type="checkbox" data-ng-model="ratingFilterCb.r2")
 											label.d-inline-block.mb-0 5 - 6
 										div
-											input.mr-1(type="checkbox" data-ng-model="ratingCheckboxs.r3")
+											input.mr-1(type="checkbox" data-ng-model="ratingFilterCb.r3")
 											label.d-inline-block.mb-0 7 - 8
 										div
-											input.mr-1(type="checkbox" data-ng-model="ratingCheckboxs.r4")
+											input.mr-1(type="checkbox" data-ng-model="ratingFilterCb.r4")
 											label.d-inline-block.mb-0 9 - 10
 
 					.col-md-9
@@ -109,9 +109,8 @@ html(ng-app="app")
 									option(value="town") 10
 									option(value="county") 20
 
-
-						//- .row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: {county: locationFilter} | filter: {sleeps: sleepsFilter} | filter: costFilter" style="background-color: #ffffff;")
-						.row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: costFilter | filter:ratingFilter:'blah' | filter: {features: {pets: filterPets}} | filter: {features: {wifi: filterWifi}} | filter: {features: {swimming: filterSwimming}} | filter: {features: {washing: filterWashing}} | filter: {features: {fireplace: filterFireplace}} | filter: {features: {hottub: filterHottub}}" style="background-color: #ffffff;")
+									
+						.row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: featureFilter | filter: costFilter | filter: bedroomFilter | filter:ratingFilter" style="background-color: #ffffff;")
 
 							.col-md-5
 								img.mw-100(ng-src="{{ home.image }}" alt="Home Image")

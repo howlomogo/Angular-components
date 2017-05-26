@@ -7,7 +7,7 @@
 		"cost": 99,
 		"image": "assets/test-house.jpg",
 		"sleeps": 1,
-		"bedrooms": 2,
+		"bedrooms": 1,
 		"rating": 10,
 		"features": {
 			"pets": true,
@@ -26,7 +26,7 @@
 		"cost": 200,
 		"image": "assets/test-house.jpg",
 		"sleeps": 2,
-		"bedrooms": 2,
+		"bedrooms": 1,
 		"rating": 9,
 		"features": {
 			"pets": true,
@@ -45,7 +45,7 @@
 		"cost": 100,
 		"image": "assets/test-house.jpg",
 		"sleeps": 3,
-		"bedrooms": 2,
+		"bedrooms": 3,
 		"rating": 4,
 		"features": {
 			"pets": false,
@@ -64,10 +64,10 @@
 		"cost": 289,
 		"image": "assets/test-house.jpg",
 		"sleeps": 4,
-		"bedrooms": 2,
+		"bedrooms": 4,
 		"rating": 7,
 		"features": {
-			"pets": false,
+			"pets": true,
 			"wifi": true,
 			"swimming": true,
 			"washing": true,
@@ -83,7 +83,7 @@
 		"cost": 200,
 		"image": "assets/test-house.jpg",
 		"sleeps": 4,
-		"bedrooms": 2,
+		"bedrooms": 3,
 		"rating": 3,
 		"features": {
 			"pets": true,

@@ -28,7 +28,16 @@ app.controller('appcontroller', ['$scope', '$http', function($scope, $http) {
 		c2: true
 	};
 
-	$scope.ratingCheckboxs = {
+	$scope.featuresFilterCb = {
+		pets: false,
+		wifi: false,
+		swimming: false,
+		washing: false,
+		fireplace: false,
+		hottub: false
+	}
+
+	$scope.ratingFilterCb = {
 		r0: true,
 		r1: true,
 		r2: true,
@@ -36,7 +45,40 @@ app.controller('appcontroller', ['$scope', '$http', function($scope, $http) {
 		r4: true
 	};
 
+	$scope.bedroomFilterCb = {
+		b1: true,
+		b2: true,
+		b3: true,
+		b4: true,
+		b5: true
+	}
+
 	// $scope.searchFilters
+
+	$scope.featureFilter = function(home) {
+
+		var result = true;
+		angular.forEach($scope.featuresFilterCb, function(value, key) {
+
+			if(($scope.featuresFilterCb[key] === true) && (home.features[key] === false)) {
+				result = false;
+			}
+		})
+
+		return result;
+	}
+
+
+
+	$scope.bedroomFilter = function(home) {
+		var bedrooms = "b"+home.bedrooms;
+		if($scope.bedroomFilterCb[bedrooms] === true) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 
 	$scope.getRating = function(num) {
 	    return new Array(num);   
@@ -58,22 +100,20 @@ app.controller('appcontroller', ['$scope', '$http', function($scope, $http) {
 		}
 	}
 
-	$scope.ratingFilter = function(home, blah) {
-		console.log(blah);
-		// console.log(home.cost);
-		if((home.rating > 0 && home.rating < 3) && $scope.ratingCheckboxs.r0) {
+	$scope.ratingFilter = function(home) {
+		if((home.rating > 0 && home.rating < 3) && $scope.ratingFilterCb.r0) {
 			return true;
 		}
-		else if((home.rating > 2 && home.rating < 5) && $scope.ratingCheckboxs.r1) {
+		else if((home.rating > 2 && home.rating < 5) && $scope.ratingFilterCb.r1) {
 			return true;
 		}
-		else if((home.rating > 4 && home.rating < 7) && $scope.ratingCheckboxs.r2) {
+		else if((home.rating > 4 && home.rating < 7) && $scope.ratingFilterCb.r2) {
 			return true;
 		}
-		else if((home.rating > 6 && home.rating < 9) && $scope.ratingCheckboxs.r3) {
+		else if((home.rating > 6 && home.rating < 9) && $scope.ratingFilterCb.r3) {
 			return true;
 		}
-		else if(home.rating > 8 && $scope.ratingCheckboxs.r4) {
+		else if(home.rating > 8 && $scope.ratingFilterCb.r4) {
 			return true;
 		}
 		else {
