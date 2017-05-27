@@ -1,75 +1,73 @@
-html(ng-app="app")
-	head
-		include /_includes/_header
-	body(ng-controller="appcontroller" style="background-color: #F5F5F5;")
-		include /_includes/_navigation
-		
-
-		section.pt-6
-			.container
-				.row.mb-4
-					.col-md-6
-						.p-4.mb-2(style="background-color: #ffffff;")
+section.pt-6
+	.container
+		.row.mb-4
+			.col-md-6
+				.p-4.mb-2(style="background-color: #ffffff;")
+					.row
+						.col-md-8
 							h3 Some house
 							h5 Some location
-							div.mb-2(style="height: 60px; overflow: hidden;")
-								p Lorem ipsum dolor sit amet, per veniam alterum invenire ei, pri solet everti in. An sit soleat splendide tincidunt, volumus delectus pri ei. Eu mei appetere comprehensam. Sea ei liberavisse necessitatibus. Vis possit albucius vituperatoribus ex, nam ut meis repudiandae. Vel et habeo alienum.
+						.col-md-4
 
-								p Vis nihil voluptua et, no sit quidam feugait. Vix ei sale dicunt prompta, ei omnis incorrupte vituperatoribus qui, eu mei delenit dolorum definitiones. No vidisse iuvaret nominavi cum. Mel delicata reprehendunt no, choro soleat gloriatur ei eam, probo incorrupte ex duo. Verear accommodare qui no.
+					div.mb-2(style="height: 60px; overflow: hidden;")
+						p Lorem ipsum dolor sit amet, per veniam alterum invenire ei, pri solet everti in. An sit soleat splendide tincidunt, volumus delectus pri ei. Eu mei appetere comprehensam. Sea ei liberavisse necessitatibus. Vis possit albucius vituperatoribus ex, nam ut meis repudiandae. Vel et habeo alienum.
 
-								p Ut munere voluptatum eos, nam ne ludus volumus moderatius, an est saepe eruditi. Id vivendo explicari mea. Te sed soluta eleifend. Tale noluisse ullamcorper ut duo. Purto vide denique est te, quo wisi possit id, eu sint habemus expetendis ius. Eu pri laudem perpetua consulatu, vix id ubique neglegentur. Vix ut semper luptatum molestiae, nam in magna paulo voluptatibus.
-							a Read More
-							hr
-							.row.text-center
-								.col-md-6
-									h5 Sleeps
-									h4 4
+						p Vis nihil voluptua et, no sit quidam feugait. Vix ei sale dicunt prompta, ei omnis incorrupte vituperatoribus qui, eu mei delenit dolorum definitiones. No vidisse iuvaret nominavi cum. Mel delicata reprehendunt no, choro soleat gloriatur ei eam, probo incorrupte ex duo. Verear accommodare qui no.
 
-								.col-md-6
-									h5 Bedrooms
-									h4 2
+						p Ut munere voluptatum eos, nam ne ludus volumus moderatius, an est saepe eruditi. Id vivendo explicari mea. Te sed soluta eleifend. Tale noluisse ullamcorper ut duo. Purto vide denique est te, quo wisi possit id, eu sint habemus expetendis ius. Eu pri laudem perpetua consulatu, vix id ubique neglegentur. Vix ut semper luptatum molestiae, nam in magna paulo voluptatibus.
+					a Read More
+					hr
+					.row.text-center
+						.col-md-6
+							h5 Sleeps
+							h4 4
 
-						.p-4.mb-2(style="background-color: #ffffff;")
-							.row
-								.col-md-4
-									p.mb-1
-										span.ion.ion-checkmark.mr-1
-										| Pets Allowed
-									p.mb-1
-										span.ion.ion-checkmark.mr-1
-										| Wifi
+						.col-md-6
+							h5 Bedrooms
+							h4 2
 
-								.col-md-4
-									p.mb-1
-										span.ion.ion-checkmark.mr-1
-										| Swimming Pool
-									p.mb-1
-										span.ion.ion-checkmark.mr-1
-										| Washing Machine
+				.p-4.mb-2(style="background-color: #ffffff;")
+					.row
+						.col-md-4
+							p.mb-1
+								span.ion.ion-checkmark.mr-1
+								| Pets Allowed
+							p.mb-1
+								span.ion.ion-checkmark.mr-1
+								| Wifi
 
-								.col-md-4
-									p.mb-1
-										span.ion.ion-checkmark.mr-1
-										| Fireplace
-									p.mb-1
-										span.ion.ion-checkmark.mr-1
-										| Hot Tub
+						.col-md-4
+							p.mb-1
+								span.ion.ion-checkmark.mr-1
+								| Swimming Pool
+							p.mb-1
+								span.ion.ion-checkmark.mr-1
+								| Washing Machine
 
-						.p-4(style="background-color: #ffffff;")
-							.row.align-items-center
-								.col-md-6
-									h5 £248
-									h6 For 7 nights
-								.col-md-6.text-right
-									button.btn Book Now
+						.col-md-4
+							p.mb-1
+								span.ion.ion-checkmark.mr-1
+								| Fireplace
+							p.mb-1
+								span.ion.ion-checkmark.mr-1
+								| Hot Tub
 
-				.row
-					.col-md-12
-						.p-4(style="background-color: #ffffff;")
-							p Lorem ipsum dolor sit amet, per veniam alterum invenire ei, pri solet everti in. An sit soleat splendide tincidunt, volumus delectus pri ei. Eu mei appetere comprehensam. Sea ei liberavisse necessitatibus. Vis possit albucius vituperatoribus ex, nam ut meis repudiandae. Vel et habeo alienum.
+				.p-4(style="background-color: #ffffff;")
+					.row.align-items-center
+						.col-md-6
+							h5 £248
+							h6 For 7 nights
+						.col-md-6.text-right
+							button.btn Book Now
 
-							p Vis nihil voluptua et, no sit quidam feugait. Vix ei sale dicunt prompta, ei omnis incorrupte vituperatoribus qui, eu mei delenit dolorum definitiones. No vidisse iuvaret nominavi cum. Mel delicata reprehendunt no, choro soleat gloriatur ei eam, probo incorrupte ex duo. Verear accommodare qui no.
+			.col-md-6
+				img.w-100(src="assets/test-house.jpg")
 
-							p Ut munere voluptatum eos, nam ne ludus volumus moderatius, an est saepe eruditi. Id vivendo explicari mea. Te sed soluta eleifend. Tale noluisse ullamcorper ut duo. Purto vide denique est te, quo wisi possit id, eu sint habemus expetendis ius. Eu pri laudem perpetua consulatu, vix id ubique neglegentur. Vix ut semper luptatum molestiae, nam in magna paulo voluptatibus.
+		.row
+			.col-md-12
+				.p-4(style="background-color: #ffffff;")
+					p Lorem ipsum dolor sit amet, per veniam alterum invenire ei, pri solet everti in. An sit soleat splendide tincidunt, volumus delectus pri ei. Eu mei appetere comprehensam. Sea ei liberavisse necessitatibus. Vis possit albucius vituperatoribus ex, nam ut meis repudiandae. Vel et habeo alienum.
 
-		include /_includes/_footer
+					p Vis nihil voluptua et, no sit quidam feugait. Vix ei sale dicunt prompta, ei omnis incorrupte vituperatoribus qui, eu mei delenit dolorum definitiones. No vidisse iuvaret nominavi cum. Mel delicata reprehendunt no, choro soleat gloriatur ei eam, probo incorrupte ex duo. Verear accommodare qui no.
+
+					p Ut munere voluptatum eos, nam ne ludus volumus moderatius, an est saepe eruditi. Id vivendo explicari mea. Te sed soluta eleifend. Tale noluisse ullamcorper ut duo. Purto vide denique est te, quo wisi possit id, eu sint habemus expetendis ius. Eu pri laudem perpetua consulatu, vix id ubique neglegentur. Vix ut semper luptatum molestiae, nam in magna paulo voluptatibus.

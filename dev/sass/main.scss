@@ -1,7 +1,7 @@
 @import "bootstrap";
 
-$color--primary: #42A5F5;
-
+$color--primary: #2196F3;
+$color--secondary: #42A5F5;
 $color--text: #2C2C2C;
 $color--para: #8D8D8D;
 $color--grey-light: #BDBDBD;
@@ -151,6 +151,28 @@ select {
 		-moz-animation: pulse 0.3s;
 		-o-animation: pulse 10.3s;
 	}
+
+	&.btn--seconday {
+		background-color: $color--secondary;
+	}
+}
+
+.banner {
+	width: 100%;
+	height: 500px;
+	background-image: url("../assets/test-house.jpg");
+	background-size: cover;
+	position: relative;
+}
+
+.banner-search {
+	width: 100%;
+	background-color: $color--primary;
+	@extend .p-4;
+
+	// select {
+	// 	width: 300px;
+	// }
 }
 
 //- Navigation
