@@ -1,4 +1,4 @@
-angular.module('app', ['angular.filter', 'ngRoute'])
+angular.module('app', ['angular.filter', 'ngRoute', '720kb.datepicker'])
 
 .config(function($routeProvider) {
 	$routeProvider
@@ -26,8 +26,14 @@ angular.module('app', ['angular.filter', 'ngRoute'])
 
 	});
 
+    $rootScope.nightList = [];
+    for (var i = 1; i <= 30; i++) {
+        $rootScope.nightList.push(i);
+    }
+
 
 	$rootScope.curFilters = {
-		location: "hampshire"
+		location: "hampshire",
+        nights: 7
 	}
 });

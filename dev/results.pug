@@ -12,10 +12,12 @@ section.pt-6
 								select.mb-2(ng-model="curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
 
 								label Date
-								select.mb-2(ng-model="locationFilter" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
+								datepicker(date-format="d/M/y")
+									input(ng-model="curFilters.date" type="text" placeholder="Select a date")
 
 								label Nights
-								select.mb-2(ng-model="locationFilter" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location' )
+								select(ng-model="curFilters.nights" ng-options="o as o for o in nightList | unique: 'county'")
+
 
 								//- label Sleeps
 								//- select.mb-2(ng-model="sleepsFilter" ng-options="x.sleeps as x.sleeps for x in properties | unique: 'sleeps'" name='sleeps')
@@ -24,7 +26,7 @@ section.pt-6
 							h5 Filter Options
 
 							.result--filter-box--inner.mb-2
-								label Price
+								label Price (Per Night)
 								div
 									input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c0")
 									label.d-inline-block.mb-0 £0 - £99
@@ -78,19 +80,38 @@ section.pt-6
 								label Customer Rating
 								div
 									input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r1")
-									label.d-inline-block.mb-0 1*
+									label.d-inline-block.mb-0
+										span.ion.ion-star.d-inline-block
 								div
 									input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r2")
-									label.d-inline-block.mb-0 2*
+									label.d-inline-block.mb-0
+										span.ion.ion-star.d-inline-block
+										span.ion.ion-star.d-inline-block
+
 								div
 									input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r3")
-									label.d-inline-block.mb-0 3*
+									label.d-inline-block.mb-0
+										span.ion.ion-star.d-inline-block
+										span.ion.ion-star.d-inline-block
+										span.ion.ion-star.d-inline-block
+
 								div
 									input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r4")
-									label.d-inline-block.mb-0 4*
+									label.d-inline-block.mb-0
+										span.ion.ion-star.d-inline-block
+										span.ion.ion-star.d-inline-block
+										span.ion.ion-star.d-inline-block
+										span.ion.ion-star.d-inline-block
+
 								div
 									input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r5")
-									label.d-inline-block.mb-0 5*
+									label.d-inline-block.mb-0
+										span.ion.ion-star.d-inline-block
+										span.ion.ion-star.d-inline-block
+										span.ion.ion-star.d-inline-block
+										span.ion.ion-star.d-inline-block
+										span.ion.ion-star.d-inline-block
+
 
 			.col-md-9
 				.row
@@ -145,7 +166,7 @@ section.pt-6
 
 
 					.col-md-2.text-center
-						h4 £{{ home.cost }}
-						h6 For 7 nights
+						h4 £{{ home.cost * curFilters.nights }}
+						h6 For {{ curFilters.nights }} nights
 						a.btn(href="#!/details/{{home.id}}") View
 
