@@ -12,16 +12,16 @@ section.pt-6
 								select.mb-2(ng-model="curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
 
 								label Start Date
-								.input-group(moment-picker="$root.dateStart" format="YYYY-MM-DD" min-date="$root.dateToday" max-date="$root.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
+								.input-group(moment-picker="$root.curFilters.dates.dateStart" format="YYYY-MM-DD" min-date="$root.curFilters.dates.dateToday" max-date="$root.curFilters.dates.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
 									span.input-group-addon
 										i.ion.ion-calendar
-									input.form-control(placeholder="Select a date" ng-model="$root.dateStart" ng-model-options="{ updateOn: 'blur' }")
+									input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateStart" ng-model-options="{ updateOn: 'blur' }")
 
 								label End Date
-								.input-group(moment-picker="$root.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.dateStart" change="$root.pickerChange()")
+								.input-group(moment-picker="$root.curFilters.dates.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.curFilters.dates.dateStart" change="$root.pickerChange()")
 									span.input-group-addon
 										i.ion.ion-calendar
-									input.form-control(placeholder="Select a date" ng-model="$root.dateEnd" ng-model-options="{ updateOn: 'blur' }")
+									input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateEnd" ng-model-options="{ updateOn: 'blur' }")
 
 
 								//- label Nights
@@ -35,7 +35,7 @@ section.pt-6
 							h5 Filter Options
 
 							.result--filter-box--inner.mb-2
-								label Price (Per Night)
+								label Price - (Per Night)
 								div
 									input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c0")
 									label.d-inline-block.mb-0 £0 - £99
@@ -47,7 +47,7 @@ section.pt-6
 									label.d-inline-block.mb-0 £200 - £299
 
 							.result--filter-box--inner.mb-2
-								label Features
+								label Features - (Must Have)
 								div
 									input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.pets")
 									label.d-inline-block.mb-0 Pets Allowed {{ featuresFilterCb.pets }}
@@ -125,7 +125,7 @@ section.pt-6
 			.col-md-9
 				.row
 					.col-md-12
-						h3 Your Results {{ home.length }} properties found
+						h3 Your Results {{ filtered.length }} properties found
 				.row.py-4
 					.col-sm-6
 						select(ng-model="resultsOrder")
@@ -139,7 +139,7 @@ section.pt-6
 							option(value="county") 20
 
 
-				.row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: locationFilter | filter: featureFilter | filter: costFilter | filter: bedroomFilter | filter:ratingFilter" style="background-color: #ffffff;")
+				.row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: locationFilter | filter: featureFilter | filter: costFilter | filter: bedroomFilter | filter:ratingFilter | filter:query as filtered" style="background-color: #ffffff;")
 
 					.col-md-5
 						img.mw-100(ng-src="{{ home.image }}" alt="Home Image")

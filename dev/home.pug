@@ -5,17 +5,17 @@
 			.col-md-3
 				select(ng-model="curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'")
 			.col-md-3
-				.input-group(moment-picker="$root.dateStart" format="YYYY-MM-DD" min-date="$root.dateToday" max-date="$root.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
+				.input-group(moment-picker="$root.curFilters.dates.dateStart" format="YYYY-MM-DD" min-date="$root.curFilters.dates.dateToday" max-date="$root.curFilters.dates.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
 					span.input-group-addon
 						i.ion.ion-calendar
-					input.form-control(placeholder="Select a date" ng-model="$root.dateStart" ng-model-options="{ updateOn: 'blur' }")
+					input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateStart" ng-model-options="{ updateOn: 'blur' }")
 
 
 			.col-md-3
-				.input-group(moment-picker="$root.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.dateStart" change="$root.pickerChange()")
+				.input-group(moment-picker="$root.curFilters.dates.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.curFilters.dates.dateStart" change="$root.pickerChange()")
 					span.input-group-addon
 						i.ion.ion-calendar
-					input.form-control(placeholder="Select a date" ng-model="$root.dateEnd" ng-model-options="{ updateOn: 'blur' }")
+					input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateEnd" ng-model-options="{ updateOn: 'blur' }")
 
 				//- select(ng-model="curFilters.nights" ng-options="o as o for o in nightList | unique: 'county'")
 			.col-md-3

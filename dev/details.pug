@@ -55,8 +55,9 @@ section.pt-6
 				.p-4(style="background-color: #ffffff;")
 					.row.align-items-center
 						.col-md-6
-							h5 {{ cottage.cost * curFilters.nights }}
+							h5 £ {{ cottage.cost * curFilters.nights }}
 							h6 For {{ curFilters.nights }} nights
+							h6 From {{ curFilters.dates.dateStart }} to {{ curFilters.dates.dateEnd }}
 						.col-md-6.text-right
 							button.btn Book Now
 

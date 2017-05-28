@@ -22,7 +22,8 @@
     "bootstrap": "v4.0.0-alpha.6",
     "angular": "^1.6.4",
     "angular-filter": "^0.5.16",
-    "angular-route": "^1.6.4"
+    "angular-route": "^1.6.4",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1"
   },
   "overrides": {
     "inuitcss": {

@@ -1,4 +1,4 @@
-angular.module('app', ['angular.filter', 'ngRoute', 'moment-picker'])
+angular.module('app', ['angular.filter', 'ngRoute', 'moment-picker', 'angularUtils.directives.dirPagination'])
 
 .config(function($routeProvider) {
 	$routeProvider
@@ -26,24 +26,28 @@ angular.module('app', ['angular.filter', 'ngRoute', 'moment-picker'])
 
 	});
 
+    var dateToday = moment();
+    var dateStart = moment();
+    var dateEnd = moment().add(7, 'd');
+
     $rootScope.curFilters = {
         location: "hampshire",
+        dates: {
+            dateToday: dateToday,
+            dateStart: dateStart,
+            dateEnd: dateEnd
+        },
         nights: $rootScope.nights
     }
 
 
-
-    $rootScope.dateToday = moment();
-    $rootScope.dateStart = moment();
-    $rootScope.dateEnd = moment().add(7, 'd');
-
-    $rootScope.curFilters.nights = $rootScope.dateEnd.diff($rootScope.dateStart, 'days');
+    $rootScope.curFilters.nights = $rootScope.curFilters.dates.dateEnd.diff($rootScope.curFilters.dates.dateStart, 'days');
 
     $rootScope.pickerChange = function() {
         
         //- convert to moment so we can get the difference.
-        var start = moment($rootScope.dateStart);
-        var end = moment($rootScope.dateEnd);
+        var start = moment($rootScope.curFilters.dates.dateStart);
+        var end = moment($rootScope.curFilters.dates.dateEnd);
 
         $rootScope.curFilters.nights = end.diff(start, 'days');
 
