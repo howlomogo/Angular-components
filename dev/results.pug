@@ -11,12 +11,21 @@ section.pt-6
 								label Location
 								select.mb-2(ng-model="curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
 
-								label Date
-								datepicker(date-format="d/M/y")
-									input(ng-model="curFilters.date" type="text" placeholder="Select a date")
+								label Start Date
+								.input-group(moment-picker="$root.dateStart" format="YYYY-MM-DD" min-date="$root.dateToday" max-date="$root.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
+									span.input-group-addon
+										i.ion.ion-calendar
+									input.form-control(placeholder="Select a date" ng-model="$root.dateStart" ng-model-options="{ updateOn: 'blur' }")
 
-								label Nights
-								select(ng-model="curFilters.nights" ng-options="o as o for o in nightList | unique: 'county'")
+								label End Date
+								.input-group(moment-picker="$root.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.dateStart" change="$root.pickerChange()")
+									span.input-group-addon
+										i.ion.ion-calendar
+									input.form-control(placeholder="Select a date" ng-model="$root.dateEnd" ng-model-options="{ updateOn: 'blur' }")
+
+
+								//- label Nights
+								//- select(ng-model="curFilters.nights" ng-options="o as o for o in nightList | unique: 'county'")
 
 
 								//- label Sleeps

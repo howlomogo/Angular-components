@@ -10,5 +10,5 @@ angular.module('app').controller('homeController', ['$scope', '$rootScope', '$wi
 	$scope.gotoResults = function(view) {
 		$location.path(view);
 	}
-
+	
 }]);
