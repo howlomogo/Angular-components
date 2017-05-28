@@ -8,7 +8,8 @@ angular.module('app').controller('resultsController', ['$scope', '$rootScope', '
 
 	$scope.selectedProperty = 2;
 
-	$scope.resultsOrder = 'town';
+	$scope.resultsOrder = 'cost';
+	$scope.resultsAmount = "2";
 
 	$scope.sleepsFilter = 2;
 

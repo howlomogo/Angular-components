@@ -134,15 +134,16 @@ section.pt-6
 							option(value="id") Id
 							option(value="cost") Cost
 					.col-sm-6.text-right
-						select(ng-model="resultsOrder")
-							option(value="town") 10
-							option(value="county") 20
+						select(ng-model="resultsAmount")
+							option(value="2") 2
+							option(value="5") 5
+							option(value="10") 10
 
 
-				.row.my-2.p-2.align-items-center(ng-repeat="home in properties | orderBy : resultsOrder | filter: locationFilter | filter: featureFilter | filter: costFilter | filter: bedroomFilter | filter:ratingFilter | filter:query as filtered" style="background-color: #ffffff;")
+				.row.my-2.p-2.align-items-center(dir-paginate="home in properties | orderBy : resultsOrder | filter: locationFilter | filter: featureFilter | filter: costFilter | filter: bedroomFilter | filter:ratingFilter | itemsPerPage: resultsAmount | filter:query as filtered" style="background-color: #ffffff;")
 
 					.col-md-5
-						img.mw-100(ng-src="{{ home.image }}" alt="Home Image")
+						img.mw-100(ng-src="assets/{{ home.image }}" alt="Home Image")
 
 					.col-md-5
 						h5 {{ home.name }}
@@ -178,4 +179,9 @@ section.pt-6
 						h4 £{{ home.cost * curFilters.nights }}
 						h6 For {{ curFilters.nights }} nights
 						a.btn(href="#!/details/{{home.id}}") View
+				.text-center
+					dir-pagination-controls(auto-hide="true" template-url="pagination.html")
+
+
+				//- dir-pagination-controls(template-url="pagination.html")
 
