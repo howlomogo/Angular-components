@@ -1,25 +1,98 @@
 .banner
-.banner-search
-	.container
-		.row
+	.banner--text
+		h1 Handpicked properties across the UK
+.banner--search
+	.container.container-small
+		.row.no-gutters.mb-2
 			.col-md-3
 				select(ng-model="curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'")
 			.col-md-3
 				.input-group(moment-picker="$root.curFilters.dates.dateStart" format="YYYY-MM-DD" min-date="$root.curFilters.dates.dateToday" max-date="$root.curFilters.dates.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
-					span.input-group-addon
-						i.ion.ion-calendar
 					input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateStart" ng-model-options="{ updateOn: 'blur' }")
 
 
 			.col-md-3
 				.input-group(moment-picker="$root.curFilters.dates.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.curFilters.dates.dateStart" change="$root.pickerChange()")
-					span.input-group-addon
-						i.ion.ion-calendar
 					input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateEnd" ng-model-options="{ updateOn: 'blur' }")
 
 				//- select(ng-model="curFilters.nights" ng-options="o as o for o in nightList | unique: 'county'")
 			.col-md-3
-				a.btn.btn--seconday.w-100(ng-click="gotoResults('results')") Search
+				button.btn.w-100(ng-click="gotoResults('results')") Search
+		.row.text-center
+			.col-md-12
+				p Fill out the form above to view our avaliable holiday cottages
 
-div(ng-repeat="home in properties | filter:{id: selectedProperty}")
-	h1 {{ home.town }}
+section.p-6.text-center
+	.container
+		.row
+			.col-md-12
+				h2 INSPIRATION
+				hr
+				p Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut. Saepe commune gubergren ex his.
+		.row
+			.col-md-4
+				.inspiration--box(style="background-image: url('assets/inspiration/scotland.jpg');")
+					.inspiration--box-text
+						h2 DISCOVER
+						h2 Scotland
+						hr
+						p View cottages
+			.col-md-4
+				.inspiration--box(style="background-image: url('assets/inspiration/relax.jpg');")
+					.inspiration--box-text
+						h2 RELAXING
+						h2 Cottages
+						hr
+						p View cottages
+			.col-md-4
+				.inspiration--box(style="background-image: url('assets/inspiration/wales.jpg');")
+					.inspiration--box-text
+						h2 EXPERIENCE
+						h2 Wales
+						hr
+						p View cottages
+			.col-md-8
+				.inspiration--box(style="background-image: url('assets/inspiration/iow.jpg');")
+					.inspiration--box-text
+						h2 EXPLORE
+						h2 The Isle Of Wight
+						hr
+						p View cottages
+			.col-md-4
+				.inspiration--box(style="background-image: url('assets/inspiration/cornwall.jpg');")
+					.inspiration--box-text
+						h2 SURFING
+						h2 In Cornwall
+						hr
+						p View cottages
+
+section.about-section
+	.container
+		.row
+			.col-md-6
+				h2 ABOUT US
+				hr
+				p Lorem ipsum dolor sit amet, solum consequat tincidunt mel id. Ne illud consectetuer sed. Pri facete lucilius consetetur an, sea te pertinax instructior, cum no vide assum moderatius. Agam graece noster sea eu.
+				p Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut. Saepe commune gubergren ex his.
+
+
+section.p-6.text-center
+	.container
+		.row
+			.col-md-4
+				img(src="assets/star.svg")
+				h4 15 YEARS SERVICE
+				hr
+				p Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut.
+
+			.col-md-4
+				img(src="assets/advisor.svg")
+				h4 EXPERIENCED ADVISORS
+				hr
+				p Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut.
+
+			.col-md-4
+				img(src="assets/heart.svg")
+				h4 CUSTOMER SATISFACTION
+				hr
+				p Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut.
