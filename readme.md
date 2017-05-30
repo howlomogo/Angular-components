@@ -1,4 +1,4 @@
-# Home Renovation Website
+# Cottage Getaways Website
 
 Setup:
 
