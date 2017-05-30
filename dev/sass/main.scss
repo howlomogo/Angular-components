@@ -308,3 +308,22 @@ select {
 .pagination {
 	justify-content: center;
 }
+
+
+.offer-section {
+	background-image: url('../assets/offer-bg.jpg');
+	background-size: cover;
+	text-align: center;
+	@extend .p-6;
+	color: $color--50;
+}
+
+.footer {
+	background-color: $color--500;
+	color: $color--50;
+	@extend .p-6;
+
+	hr {
+		border-top: 1px solid $color--50;
+	}
+}
