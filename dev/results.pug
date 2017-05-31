@@ -1,132 +1,13 @@
-section.pt-6
-	.container
+section(style="padding-top: 140px;")
+	.container-fluid
 		.row
-			.col-md-4
-				.row
-					.col-md-12
-						.results--filter-box.mb-2
-							h5 Cottage Search
-
-							.result--filter-box--inner
-								label Location
-								select.mb-2(ng-model="curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
-
-								label Start Date
-								.input-group(moment-picker="$root.curFilters.dates.dateStart" format="YYYY-MM-DD" min-date="$root.curFilters.dates.dateToday" max-date="$root.curFilters.dates.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
-									span.input-group-addon
-										i.ion.ion-calendar
-									input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateStart" ng-model-options="{ updateOn: 'blur' }")
-
-								label End Date
-								.input-group(moment-picker="$root.curFilters.dates.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.curFilters.dates.dateStart" change="$root.pickerChange()")
-									span.input-group-addon
-										i.ion.ion-calendar
-									input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateEnd" ng-model-options="{ updateOn: 'blur' }")
+			.col-lg-3.col-md-12.col-sm-12
+				include /_includes/_results-left
 
 
-								//- label Nights
-								//- select(ng-model="curFilters.nights" ng-options="o as o for o in nightList | unique: 'county'")
-
-
-								//- label Sleeps
-								//- select.mb-2(ng-model="sleepsFilter" ng-options="x.sleeps as x.sleeps for x in properties | unique: 'sleeps'" name='sleeps')
-
-						.results--filter-box
-							h5 Filter Options
-
-							.result--filter-box--inner.mb-2
-								label Price - (Per Night)
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c0")
-									label.d-inline-block.mb-0 £0 - £99
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c1")
-									label.d-inline-block.mb-0 £100 - £199
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c2")
-									label.d-inline-block.mb-0 £200 - £299
-
-							.result--filter-box--inner.mb-2
-								label Features - (Must Have)
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.pets")
-									label.d-inline-block.mb-0 Pets Allowed {{ featuresFilterCb.pets }}
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.wifi")
-									label.d-inline-block.mb-0 Wifi
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.swimming")
-									label.d-inline-block.mb-0 Swimming Pool
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.washing")
-									label.d-inline-block.mb-0 Washing Machine
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.fireplace")
-									label.d-inline-block.mb-0 Fireplace
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.hottub")
-									label.d-inline-block.mb-0 Hot Tub
-
-							.result--filter-box--inner.mb-2
-								label Bedrooms
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b1")
-									label.d-inline-block.mb-0 1
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b2")
-									label.d-inline-block.mb-0 2
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b3")
-									label.d-inline-block.mb-0 3
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b4")
-									label.d-inline-block.mb-0 4
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b5")
-									label.d-inline-block.mb-0 5
-
-							.result--filter-box--inner
-								label Customer Rating
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r1")
-									label.d-inline-block.mb-0
-										span.ion.ion-star.d-inline-block
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r2")
-									label.d-inline-block.mb-0
-										span.ion.ion-star.d-inline-block
-										span.ion.ion-star.d-inline-block
-
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r3")
-									label.d-inline-block.mb-0
-										span.ion.ion-star.d-inline-block
-										span.ion.ion-star.d-inline-block
-										span.ion.ion-star.d-inline-block
-
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r4")
-									label.d-inline-block.mb-0
-										span.ion.ion-star.d-inline-block
-										span.ion.ion-star.d-inline-block
-										span.ion.ion-star.d-inline-block
-										span.ion.ion-star.d-inline-block
-
-								div
-									input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r5")
-									label.d-inline-block.mb-0
-										span.ion.ion-star.d-inline-block
-										span.ion.ion-star.d-inline-block
-										span.ion.ion-star.d-inline-block
-										span.ion.ion-star.d-inline-block
-										span.ion.ion-star.d-inline-block
-
-
-			.col-md-8
-				.row
-					.col-md-12
-						h3 Your Results {{ filtered.length }} properties found
-				.row.py-4
+			.col-lg-9.col-md-12.col-sm-12
+				h3 Your Results {{ filtered.length }} properties found
+				.row.results--top-filters.mb-2
 					.col-sm-6
 						select(ng-model="resultsOrder")
 							option(value="town") Town
@@ -140,48 +21,53 @@ section.pt-6
 							option(value="10") 10
 
 
-				.row.my-2.p-2.align-items-center(dir-paginate="home in properties | orderBy : resultsOrder | filter: locationFilter | filter: featureFilter | filter: costFilter | filter: bedroomFilter | filter:ratingFilter | itemsPerPage: resultsAmount | filter:query as filtered" style="background-color: #ffffff;")
 
-					.col-md-5
-						img.mw-100(ng-src="assets/{{ home.image }}" alt="Home Image")
+				.row(dir-paginate="home in properties | orderBy : resultsOrder | filter: locationFilter | filter: featureFilter | filter: costFilter | filter: bedroomFilter | filter:ratingFilter | itemsPerPage: resultsAmount | filter:query as filtered")
+					.col-md-12
+						.results--cottage-section
+							.row.align-items-center
+								.col-md-5
+									img(ng-src="assets/{{ home.image }}" alt="Home Image")
 
-					.col-md-5
-						h5 {{ home.name }}
-						h5 {{ home.town }}, {{ home.county }}
+								.col-md-7
+									h5.cottage-name {{ home.name }}
+									h6.cottage-town {{ home.town }}, {{ home.county }}
+									p.mb-2 Sleeps {{ home.sleeps }} | Bedrooms {{ home.bedrooms }} |
+										span.ml-1
+											span.ion.ion-star.d-inline-block(ng-repeat="i in getRating(home.rating) track by $index")
+									hr.mb-1
+									.row.results--features.no-gutters
+										.col-md-4.col-sm-6
+											p
+												span.ion.mr-1(ng-class="home.features.pets ? 'ion-checkmark' : 'ion-close'")
+												| Pets Allowed
+											p
+												span.ion.mr-1(ng-class="home.features.wifi ? 'ion-checkmark' : 'ion-close'")
+												| Wifi
+										.col-md-4.col-sm-6
+											p
+												span.ion.mr-1(ng-class="home.features.swimming ? 'ion-checkmark' : 'ion-close'")
+												| Swimming Pool
+											p
+												span.ion.mr-1(ng-class="home.features.washing ? 'ion-checkmark' : 'ion-close'")
+												| Washing
+										.col-md-4.col-sm-6
+											p
+												span.ion.mr-1(ng-class="home.features.fireplace ? 'ion-checkmark' : 'ion-close'")
+												| Fireplace
+											p
+												span.ion.mr-1(ng-class="home.features.hottub ? 'ion-checkmark' : 'ion-close'")
+												| Hot Tub
 
-						p Sleeps {{ home.sleeps }} | Bedrooms {{ home.bedrooms }}
-						.ion.ion-star.d-inline-block(ng-repeat="i in getRating(home.rating) track by $index")
-						hr
-						.row
-							.col-md-6
-								p.mb-1
-									span.ion.mr-1(ng-class="home.features.pets ? 'ion-checkmark' : 'ion-close'")
-									| Pets Allowed
-								p.mb-1
-									span.ion.mr-1(ng-class="home.features.wifi ? 'ion-checkmark' : 'ion-close'")
-									| Wifi
-								p.mb-1
-									span.ion.mr-1(ng-class="home.features.swimming ? 'ion-checkmark' : 'ion-close'")
-									| Swimming Pool
-							.col-md-6
-								p.mb-1
-									span.ion.mr-1(ng-class="home.features.washing ? 'ion-checkmark' : 'ion-close'")
-									| Washing
-								p.mb-1
-									span.ion.mr-1(ng-class="home.features.fireplace ? 'ion-checkmark' : 'ion-close'")
-									| Fireplace
-								p.mb-1
-									span.ion.mr-1(ng-class="home.features.hottub ? 'ion-checkmark' : 'ion-close'")
-									| Hot Tub
+									hr.mb-2
+									.row.align-items-center
+										.col-md-6
+											p.mb-0 {{ curFilters.nights }} nights
+											h5 From £{{ home.cost * curFilters.nights }}
+										.col-md-6.text-right
+											a(href="#!/details/{{home.id}}")
+												button.btn View and Book
 
 
-					.col-md-2.text-center
-						h4 £{{ home.cost * curFilters.nights }}
-						h6 For {{ curFilters.nights }} nights
-						a.btn(href="#!/details/{{home.id}}") View
 				.text-center
 					dir-pagination-controls(auto-hide="true" template-url="pagination.html")
-
-
-				//- dir-pagination-controls(template-url="pagination.html")
-

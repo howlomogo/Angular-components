@@ -1,0 +1,62 @@
+.results--filter-box {
+	background-color: #ffffff;
+
+	@extend .p-2;
+
+	h5 {
+		color: $color--500;
+		font-weight: 500;
+		@extend .mb-2;
+	}
+}
+
+.result--filter-box--inner {
+	background-color: #fafafa;
+	border: 1px solid #EEEEEE;
+	@extend .p-2;
+}
+
+.pagination {
+	justify-content: center;
+}
+
+.results--top-filters {
+	@extend .pt-2;
+}
+
+.results--cottage-section {
+	background-color: #ffffff;
+	@extend .mb-2;
+	@extend .px-2;
+	@extend .py-4;
+
+	.cottage-name {
+		font-weight: 300;
+		@extend .mb-1;
+	}
+
+	hr {
+		margin: 0px;
+	}
+
+	h5 {
+		@extend .mb-0;
+		color: $color--500;
+	}
+
+	.btn {
+		font-size: 0.85rem;
+	}
+
+	img {
+		width: 500px;
+		max-width: 100%;
+	}
+}
+
+.results--features {
+	p {
+		@extend .mb-1;
+		font-size: 0.85rem;
+	}
+}

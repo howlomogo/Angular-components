@@ -1,0 +1,109 @@
+.results--filter-box.mb-2
+	h5 Cottage Search
+
+	.result--filter-box--inner
+		label Location
+		select.mb-2(ng-model="curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
+
+		label Start Date
+		.input-group(moment-picker="$root.curFilters.dates.dateStart" format="YYYY-MM-DD" min-date="$root.curFilters.dates.dateToday" max-date="$root.curFilters.dates.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
+			span.input-group-addon
+				i.ion.ion-calendar
+			input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateStart" ng-model-options="{ updateOn: 'blur' }")
+
+		label End Date
+		.input-group(moment-picker="$root.curFilters.dates.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.curFilters.dates.dateStart" change="$root.pickerChange()")
+			span.input-group-addon
+				i.ion.ion-calendar
+			input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateEnd" ng-model-options="{ updateOn: 'blur' }")
+
+
+.results--filter-box
+	h5 Filter Options
+
+	.result--filter-box--inner.mb-2
+		label Price - (Per Night)
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c0")
+			label.d-inline-block.mb-0 £0 - £99
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c1")
+			label.d-inline-block.mb-0 £100 - £199
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c2")
+			label.d-inline-block.mb-0 £200 - £299
+
+	.result--filter-box--inner.mb-2
+		label Features - (Must Have)
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.pets")
+			label.d-inline-block.mb-0 Pets Allowed {{ featuresFilterCb.pets }}
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.wifi")
+			label.d-inline-block.mb-0 Wifi
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.swimming")
+			label.d-inline-block.mb-0 Swimming Pool
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.washing")
+			label.d-inline-block.mb-0 Washing Machine
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.fireplace")
+			label.d-inline-block.mb-0 Fireplace
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.hottub")
+			label.d-inline-block.mb-0 Hot Tub
+
+	.result--filter-box--inner.mb-2
+		label Bedrooms
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b1")
+			label.d-inline-block.mb-0 1
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b2")
+			label.d-inline-block.mb-0 2
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b3")
+			label.d-inline-block.mb-0 3
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b4")
+			label.d-inline-block.mb-0 4
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b5")
+			label.d-inline-block.mb-0 5
+
+	.result--filter-box--inner
+		label Customer Rating
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r1")
+			label.d-inline-block.mb-0
+				span.ion.ion-star.d-inline-block
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r2")
+			label.d-inline-block.mb-0
+				span.ion.ion-star.d-inline-block
+				span.ion.ion-star.d-inline-block
+
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r3")
+			label.d-inline-block.mb-0
+				span.ion.ion-star.d-inline-block
+				span.ion.ion-star.d-inline-block
+				span.ion.ion-star.d-inline-block
+
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r4")
+			label.d-inline-block.mb-0
+				span.ion.ion-star.d-inline-block
+				span.ion.ion-star.d-inline-block
+				span.ion.ion-star.d-inline-block
+				span.ion.ion-star.d-inline-block
+
+		div
+			input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r5")
+			label.d-inline-block.mb-0
+				span.ion.ion-star.d-inline-block
+				span.ion.ion-star.d-inline-block
+				span.ion.ion-star.d-inline-block
+				span.ion.ion-star.d-inline-block
+				span.ion.ion-star.d-inline-block
