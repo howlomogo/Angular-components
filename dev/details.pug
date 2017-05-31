@@ -1,13 +1,15 @@
-section.pt-6
-	.container
+section(style="padding-top: 140px;")
+	.container-fluid
 		.row.mb-4
 			.col-md-6
-				.p-4.mb-2(style="background-color: #ffffff;")
-					.row
-						.col-md-8
-							h3 {{ cottage.name }}
-							h5 {{ cottage.town }}, {{ cottage.county }}
-						.col-md-4
+				.details--main
+					.row.mb-2
+						.col-md-12.col-lg-8
+							h3.cottage-name.color--500 {{ cottage.name }}
+							h5.cottage-town {{ cottage.town }}, {{ cottage.county }}
+						.col-md-12.col-lg-4.text-center
+							h6.mt-1 Customer Rating
+							span.ion.ion-star.d-inline-block(ng-repeat="i in getRating(cottage.rating) track by $index")
 
 					div.mb-2(style="height: 60px; overflow: hidden;")
 						p Lorem ipsum dolor sit amet, per veniam alterum invenire ei, pri solet everti in. An sit soleat splendide tincidunt, volumus delectus pri ei. Eu mei appetere comprehensam. Sea ei liberavisse necessitatibus. Vis possit albucius vituperatoribus ex, nam ut meis repudiandae. Vel et habeo alienum.
@@ -15,15 +17,17 @@ section.pt-6
 						p Vis nihil voluptua et, no sit quidam feugait. Vix ei sale dicunt prompta, ei omnis incorrupte vituperatoribus qui, eu mei delenit dolorum definitiones. No vidisse iuvaret nominavi cum. Mel delicata reprehendunt no, choro soleat gloriatur ei eam, probo incorrupte ex duo. Verear accommodare qui no.
 
 						p Ut munere voluptatum eos, nam ne ludus volumus moderatius, an est saepe eruditi. Id vivendo explicari mea. Te sed soluta eleifend. Tale noluisse ullamcorper ut duo. Purto vide denique est te, quo wisi possit id, eu sint habemus expetendis ius. Eu pri laudem perpetua consulatu, vix id ubique neglegentur. Vix ut semper luptatum molestiae, nam in magna paulo voluptatibus.
-					a Read More
-					hr
+					a
+						span.mr-1 Read More
+						span.ion.ion-chevron-right
+					hr.my-4
 					.row.text-center
 						.col-md-6
-							h5 Sleeps
+							h6 Sleeps
 							h4 {{ cottage.sleeps }}
 
 						.col-md-6
-							h5 Bedrooms
+							h6 Bedrooms
 							h4 {{ cottage.bedrooms }}
 
 				.p-4.mb-2(style="background-color: #ffffff;")
@@ -62,11 +66,25 @@ section.pt-6
 							button.btn Book Now
 
 			.col-md-6
-				img.w-100(ng-src="assets/{{cottage.image}}")
+				//- img.w-100(ng-src="assets/{{cottage.image}}")
+				#carouselExampleControls.carousel.slide(data-ride="carousel")
+					.carousel-inner(role="listbox")
+						.carousel-item.active
+							img.d-block.img-fluid(src="assets/{{cottage.image}}" alt="First slide")
+						.carousel-item
+							img.d-block.img-fluid(src="assets/{{cottage.image}}" alt="Second slide")
+
+					a.carousel-control-prev(href="#carouselExampleControls" role="button" data-slide="prev")
+						span.carousel-control-prev-icon(aria-hidden="true")
+					a.carousel-control-next(href="#carouselExampleControls" role="button" data-slide="next")
+						span.carousel-control-next-icon(aria-hidden="true")
+
 
 		.row
 			.col-md-12
-				.p-4(style="background-color: #ffffff;")
+				.details--about
+					h3 About {{ cottage.name }}
+					hr.hr.hr--left
 					p Lorem ipsum dolor sit amet, per veniam alterum invenire ei, pri solet everti in. An sit soleat splendide tincidunt, volumus delectus pri ei. Eu mei appetere comprehensam. Sea ei liberavisse necessitatibus. Vis possit albucius vituperatoribus ex, nam ut meis repudiandae. Vel et habeo alienum.
 
 					p Vis nihil voluptua et, no sit quidam feugait. Vix ei sale dicunt prompta, ei omnis incorrupte vituperatoribus qui, eu mei delenit dolorum definitiones. No vidisse iuvaret nominavi cum. Mel delicata reprehendunt no, choro soleat gloriatur ei eam, probo incorrupte ex duo. Verear accommodare qui no.

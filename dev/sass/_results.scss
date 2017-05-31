@@ -12,6 +12,19 @@
 	}
 }
 
+.cottage-name {
+	font-weight: 300;
+	@extend .mb-1;
+	text-transform: capitalize;
+}
+
+.cottage-town {
+	font-weight: 300;
+	@extend .mb-2;
+	color: $color--900;
+	text-transform: capitalize;
+}
+
 .result--filter-box--inner {
 	background-color: #fafafa;
 	border: 1px solid #EEEEEE;
@@ -37,19 +50,6 @@
 		@media (max-width: 1200px) {
 			font-size: 0.85rem;
 		}
-	}
-
-	.cottage-name {
-		font-weight: 300;
-		@extend .mb-1;
-		text-transform: capitalize;
-	}
-
-	.cottage-town {
-		font-weight: 300;
-		@extend .mb-2;
-		color: $color--900;
-		text-transform: capitalize;
 	}
 
 	hr {

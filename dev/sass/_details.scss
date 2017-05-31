@@ -1,0 +1,32 @@
+.details--main {
+	@extend .p-4;
+	@extend .mb-2;
+	background-color: #ffffff;
+
+	@media (max-width: 992px) {
+		text-align: center;
+
+		.ion {
+			margin-bottom: 16px;
+		}
+	}
+
+	h4 {
+		color: $color--500;
+	}
+
+	p {
+	}
+}
+
+
+.details--about {
+	background-color: #ffffff;
+	@extend .p-4;
+	@extend .mb-4;
+
+	h3 {
+		font-weight: 300;
+		color: $color--500;
+	}
+}

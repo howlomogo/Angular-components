@@ -2,6 +2,10 @@ angular.module('app').controller('detailsController', ['$scope', '$rootScope', '
 
 	$scope.cottage = {};
 
+	$scope.getRating = function(num) {
+	    return new Array(num);   
+	}
+
 	function init() {
 		var propertyId = $routeParams.id;
 		//- Could have passed object in directly but wanted to use routeParams
