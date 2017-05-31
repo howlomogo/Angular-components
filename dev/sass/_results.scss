@@ -1,7 +1,9 @@
 .results--filter-box {
 	background-color: #ffffff;
 
-	@extend .p-2;
+	@extend .pt-2;
+	@extend .pl-2;
+	@extend .pr-2;
 
 	h5 {
 		color: $color--500;
@@ -30,9 +32,24 @@
 	@extend .px-2;
 	@extend .py-4;
 
+
+	p {
+		@media (max-width: 1200px) {
+			font-size: 0.85rem;
+		}
+	}
+
 	.cottage-name {
 		font-weight: 300;
 		@extend .mb-1;
+		text-transform: capitalize;
+	}
+
+	.cottage-town {
+		font-weight: 300;
+		@extend .mb-2;
+		color: $color--900;
+		text-transform: capitalize;
 	}
 
 	hr {
@@ -57,6 +74,5 @@
 .results--features {
 	p {
 		@extend .mb-1;
-		font-size: 0.85rem;
 	}
 }

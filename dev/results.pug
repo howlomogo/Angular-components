@@ -1,8 +1,7 @@
 section(style="padding-top: 140px;")
 	.container-fluid
 		.row
-			.col-lg-3.col-md-12.col-sm-12
-				include /_includes/_results-left
+			include /_includes/_results-left
 
 
 			.col-lg-9.col-md-12.col-sm-12
@@ -32,26 +31,30 @@ section(style="padding-top: 140px;")
 								.col-md-7
 									h5.cottage-name {{ home.name }}
 									h6.cottage-town {{ home.town }}, {{ home.county }}
-									p.mb-2 Sleeps {{ home.sleeps }} | Bedrooms {{ home.bedrooms }} |
-										span.ml-1
+									p.mb-2.font-weight-400
+										span.mr-1 Sleeps: {{ home.sleeps }}
+										span.mr-1 |
+										span.mr-1 Bedrooms: {{ home.bedrooms }}
+										span.mr-1 |
+										span
 											span.ion.ion-star.d-inline-block(ng-repeat="i in getRating(home.rating) track by $index")
 									hr.mb-1
 									.row.results--features.no-gutters
-										.col-md-4.col-sm-6
+										.col-md-4
 											p
 												span.ion.mr-1(ng-class="home.features.pets ? 'ion-checkmark' : 'ion-close'")
 												| Pets Allowed
 											p
 												span.ion.mr-1(ng-class="home.features.wifi ? 'ion-checkmark' : 'ion-close'")
 												| Wifi
-										.col-md-4.col-sm-6
+										.col-md-4
 											p
 												span.ion.mr-1(ng-class="home.features.swimming ? 'ion-checkmark' : 'ion-close'")
 												| Swimming Pool
 											p
 												span.ion.mr-1(ng-class="home.features.washing ? 'ion-checkmark' : 'ion-close'")
 												| Washing
-										.col-md-4.col-sm-6
+										.col-md-4
 											p
 												span.ion.mr-1(ng-class="home.features.fireplace ? 'ion-checkmark' : 'ion-close'")
 												| Fireplace

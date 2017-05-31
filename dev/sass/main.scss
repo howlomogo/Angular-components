@@ -119,12 +119,8 @@ select {
 	background-color: #ffffff;
 }
 
-.ion-checkmark {
-	color: green;
-}
-
-.ion-close{
-	color: red;
+.ion {
+	color: $color--500;
 }
 
 .container-small {
