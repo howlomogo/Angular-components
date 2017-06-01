@@ -16,14 +16,14 @@
 
 						.col-md-4.col-lg-12.gutter--sm
 							label.mb-1 Start Date
-							.input-group.mb-2(moment-picker="$root.curFilters.dates.dateStart" format="YYYY-MM-DD" min-date="$root.curFilters.dates.dateToday" max-date="$root.curFilters.dates.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
+							.input-group.form--results-date.mb-2(moment-picker="$root.curFilters.dates.dateStart" format="YYYY-MM-DD" min-date="$root.curFilters.dates.dateToday" max-date="$root.curFilters.dates.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
 								span.input-group-addon
 									i.ion.ion-calendar
 								input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateStart" ng-model-options="{ updateOn: 'blur' }")
 
 						.col-md-4.col-lg-12.gutter--sm
 							label.mb-1 End Date
-							.input-group(moment-picker="$root.curFilters.dates.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.curFilters.dates.dateStart" change="$root.pickerChange()")
+							.input-group.form--results-date(moment-picker="$root.curFilters.dates.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.curFilters.dates.dateStart" change="$root.pickerChange()")
 								span.input-group-addon
 									i.ion.ion-calendar
 								input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateEnd" ng-model-options="{ updateOn: 'blur' }")

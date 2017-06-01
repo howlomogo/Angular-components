@@ -86,7 +86,7 @@
     width: 100%;
 }
 .select select {
-    font-family: 'Arial';
+    font-family: 'Open Sans', sans-serif;
     display: inline-block;
     width: 100%;
     cursor: pointer;
@@ -125,4 +125,30 @@
 .select select:hover ~ .select_arrow,
 .select select:focus ~ .select_arrow {
     // border-top-color: #000000;
+}
+
+
+
+
+//- Form
+
+.form--results-date {
+
+    .form-control {
+        color: #757575;
+        padding: 8px 16px;
+        border: 1px solid #E0E0E0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        outline: none;
+    }
+
+    .input-group-addon {
+        border: 1px solid #E0E0E0;
+        border-right: 0px;
+
+        .ion {
+            color: #757575;
+        }
+    }
 }
