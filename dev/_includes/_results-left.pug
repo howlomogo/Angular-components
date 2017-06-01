@@ -30,91 +30,127 @@
 				.row
 					.col-sm-6.col-md-3.col-lg-12.gutter--sm
 						.result--filter-box--inner.mb-2
-							label Price - (Per Night)
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c0")
-								label.d-inline-block.mb-0 £0 - £99
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c1")
-								label.d-inline-block.mb-0 £100 - £199
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.costCb.c2")
-								label.d-inline-block.mb-0 £200 - £299
+							label.mb-1 Price - (Per Night)
+
+							.control-group
+								label.control.control-checkbox
+									| £0 - £99
+									input(type='checkbox', checked='checked' data-ng-model="filterOptions.costCb.c0")
+									.control_indicator
+
+								label.control.control-checkbox
+									| £100 - £199
+									input(type='checkbox', checked='checked' data-ng-model="filterOptions.costCb.c1")
+									.control_indicator
+
+								label.control.control-checkbox
+									| £200 - £299
+									input(type='checkbox', checked='checked' data-ng-model="filterOptions.costCb.c2")
+									.control_indicator
+
 
 					.col-sm-6.col-md-4.col-lg-12.gutter--sm
 						.result--filter-box--inner.mb-2
-							label Features - (Must Have)
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.pets")
-								label.d-inline-block.mb-0 Pets Allowed {{ featuresFilterCb.pets }}
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.wifi")
-								label.d-inline-block.mb-0 Wifi
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.swimming")
-								label.d-inline-block.mb-0 Swimming Pool
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.washing")
-								label.d-inline-block.mb-0 Washing Machine
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.fireplace")
-								label.d-inline-block.mb-0 Fireplace
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.featuresCb.hottub")
-								label.d-inline-block.mb-0 Hot Tub
+							label.mb-1 Features - (Must Have)
+
+							label.control.control-checkbox
+								| Pets Allowed
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.featuresCb.pets")
+								.control_indicator
+
+							label.control.control-checkbox
+								| Wifi
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.featuresCb.wifi")
+								.control_indicator
+
+							label.control.control-checkbox
+								| Swimming Pool
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.featuresCb.swimming")
+								.control_indicator
+
+							label.control.control-checkbox
+								| Washing Machine
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.featuresCb.washing")
+								.control_indicator
+
+							label.control.control-checkbox
+								| Fireplace
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.featuresCb.fireplace")
+								.control_indicator
+
+							label.control.control-checkbox
+								| Hot Tub
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.featuresCb.hottub")
+								.control_indicator
+
 
 					.col-sm-6.col-md-2.col-lg-12.gutter--sm
 						.result--filter-box--inner.mb-2
-							label Bedrooms
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b1")
-								label.d-inline-block.mb-0 1
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b2")
-								label.d-inline-block.mb-0 2
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b3")
-								label.d-inline-block.mb-0 3
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b4")
-								label.d-inline-block.mb-0 4
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.bedroomsCb.b5")
-								label.d-inline-block.mb-0 5
+							label.mb-1 Bedrooms
+
+							label.control.control-checkbox
+								| 1
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.bedroomsCb.b1")
+								.control_indicator
+
+							label.control.control-checkbox
+								| 2
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.bedroomsCb.b2")
+								.control_indicator
+
+							label.control.control-checkbox
+								| 3
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.bedroomsCb.b3")
+								.control_indicator
+
+							label.control.control-checkbox
+								| 4
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.bedroomsCb.b4")
+								.control_indicator
+
+							label.control.control-checkbox
+								| 5
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.bedroomsCb.b5")
+								.control_indicator
+
 
 					.col-sm-6.col-md-3.col-lg-12.gutter--sm
 						.result--filter-box--inner.mb-2
-							label Customer Rating
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r1")
-								label.d-inline-block.mb-0
-									span.ion.ion-star.d-inline-block
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r2")
-								label.d-inline-block.mb-0
-									span.ion.ion-star.d-inline-block
-									span.ion.ion-star.d-inline-block
+							label.mb-1 Customer Rating
 
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r3")
-								label.d-inline-block.mb-0
-									span.ion.ion-star.d-inline-block
-									span.ion.ion-star.d-inline-block
-									span.ion.ion-star.d-inline-block
 
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r4")
-								label.d-inline-block.mb-0
-									span.ion.ion-star.d-inline-block
-									span.ion.ion-star.d-inline-block
-									span.ion.ion-star.d-inline-block
-									span.ion.ion-star.d-inline-block
+							label.control.control-checkbox
+								span.ion.ion-star.d-inline-block
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.ratingCb.r1")
+								.control_indicator
 
-							div
-								input.mr-1(type="checkbox" data-ng-model="filterOptions.ratingCb.r5")
-								label.d-inline-block.mb-0
-									span.ion.ion-star.d-inline-block
-									span.ion.ion-star.d-inline-block
-									span.ion.ion-star.d-inline-block
-									span.ion.ion-star.d-inline-block
-									span.ion.ion-star.d-inline-block
+
+							label.control.control-checkbox
+								span.ion.ion-star.d-inline-block
+								span.ion.ion-star.d-inline-block
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.ratingCb.r2")
+								.control_indicator
+
+							label.control.control-checkbox
+								span.ion.ion-star.d-inline-block
+								span.ion.ion-star.d-inline-block
+								span.ion.ion-star.d-inline-block
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.ratingCb.r3")
+								.control_indicator
+
+							label.control.control-checkbox
+								span.ion.ion-star.d-inline-block
+								span.ion.ion-star.d-inline-block
+								span.ion.ion-star.d-inline-block
+								span.ion.ion-star.d-inline-block
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.ratingCb.r4")
+								.control_indicator
+
+							label.control.control-checkbox
+								span.ion.ion-star.d-inline-block
+								span.ion.ion-star.d-inline-block
+								span.ion.ion-star.d-inline-block
+								span.ion.ion-star.d-inline-block
+								span.ion.ion-star.d-inline-block
+								input(type='checkbox', checked='checked' data-ng-model="filterOptions.ratingCb.r5")
+								.control_indicator

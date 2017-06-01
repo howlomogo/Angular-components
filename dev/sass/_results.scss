@@ -1,6 +1,12 @@
 .results--filter-box {
 	background-color: #ffffff;
 
+	.gutter--sm {
+    	display: flex;
+    	flex: 1 1 auto;
+    	flex-direction: column;
+	}
+
 	@extend .pt-2;
 	@extend .pl-2;
 	@extend .pr-2;
@@ -26,6 +32,7 @@
 }
 
 .result--filter-box--inner {
+	flex-grow: 1;
 	background-color: #fafafa;
 	border: 1px solid #EEEEEE;
 	@extend .p-2;
@@ -33,6 +40,22 @@
 
 .pagination {
 	justify-content: center;
+	
+
+	.page-item {
+
+		.page-link {
+			color: $color--500;
+		}
+
+		&.active {
+			.page-link {
+				color: $color--50;
+				background-color: $color--500;
+				border: 1px solid $color--500;
+			}
+		}
+	}
 }
 
 .results--top-filters {
