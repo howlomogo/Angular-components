@@ -9,16 +9,35 @@ section(style="padding-top: 140px;")
 					span.color--500 {{ filtered.length }} properties found
 				.row.results--top-filters.mb-2
 					.col-sm-6
-						select(ng-model="resultsOrder")
-							option(value="town") Town
-							option(value="county") County
-							option(value="id") Id
-							option(value="cost") Cost
-					.col-sm-6.text-right
-						select(ng-model="resultsAmount")
-							option(value="2") 2
-							option(value="5") 5
-							option(value="10") 10
+						label Sort By:
+						.select
+							select(ng-model="resultsOrder")
+								option(value="town") Town
+								option(value="county") County
+								option(value="cost") Cost
+							.select_arrow
+
+						//- select(ng-model="resultsOrder")
+						//- 	option(value="town") Town
+						//- 	option(value="county") County
+						//- 	option(value="id") Id
+						//- 	option(value="cost") Cost
+					.col-sm-6
+						label Results Per Page:
+						.select
+							select(ng-model="resultsAmount")
+								option(value="2") 2
+								option(value="5") 5
+								option(value="10") 10
+							.select_arrow
+
+
+
+
+						//- select(ng-model="resultsAmount")
+						//- 	option(value="2") 2
+						//- 	option(value="5") 5
+						//- 	option(value="10") 10
 
 
 
