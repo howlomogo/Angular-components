@@ -20,13 +20,12 @@
 
 .cottage-name {
 	font-weight: 300;
-	@extend .mb-1;
 	text-transform: capitalize;
 }
 
 .cottage-town {
 	font-weight: 300;
-	@extend .mb-2;
+	@extend .mb-1;
 	color: $color--900;
 	text-transform: capitalize;
 }
@@ -68,19 +67,44 @@
 	@extend .px-2;
 	@extend .py-4;
 
-
 	p {
-		@media (max-width: 1200px) {
-			font-size: 0.85rem;
-		}
+		// @media (max-width: 1200px) {
+		// 	font-size: 0.85rem;
+		// }
+		font-size: 0.85rem;
 	}
 
 	hr {
+		// width: 160px;
 		margin: 0px;
+		border-top: 1px solid $color--100;
 	}
 
-	h5 {
-		@extend .mb-0;
+	@media (max-width: 768px) {
+		text-align: center;
+
+		hr {
+			margin: 0 auto;
+			width: 320px;
+		}
+
+		.text-right {
+			text-align: center !important;
+		}
+
+		img {
+			margin-bottom: 16px;
+		}
+	}
+
+	@media (max-width: 576px) {
+		hr {
+			width: 160px;
+		}
+	}
+
+	.cottage-name {
+		@extend .mb-1;
 		color: $color--500;
 	}
 
@@ -91,11 +115,27 @@
 	img {
 		width: 500px;
 		max-width: 100%;
+
+		@media (max-width: 768px) {
+			width:100%;
+			max-width: 320px;
+		}
+	}
+
+	.results--price {
+		color: $color--500;
+		font-weight: 400;
 	}
 }
 
+
+
+
 .results--features {
 	p {
+		display: inline-block;
+		width: 160px;
 		@extend .mb-1;
+		// text-align: left !important;
 	}
 }

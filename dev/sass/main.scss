@@ -101,29 +101,6 @@ label {
 	font-size: 14px;
 }
 
-input, textarea, select {
-	// display: block;
-	// width: 100%;
-	// // border: 2px solid #E0E0E0;
-	// outline: none;
-	// border: none;
-
-	// &[type="checkbox"] {
-	// 	display: inline-block !important;
-	// 	width: auto !important;
-	// }
-
-	// @extend .p-1;
-	// @extend .px-2;
-}
-
-// select {
-// 	height: 44px;
-// 	color: #bdbdbd;
-// 	border-radius: 0;
-// 	-webkit-appearance: none;
-// 	background-color: #ffffff;
-// }
 
 .ion {
 	color: $color--500;

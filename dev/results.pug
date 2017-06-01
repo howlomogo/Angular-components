@@ -5,10 +5,10 @@ section(style="padding-top: 140px;")
 
 
 			.col-lg-9.col-md-12.col-sm-12
-				h3 Your Results 
+				h4 Your Results 
 					span.color--500 {{ filtered.length }} properties found
 				.row.results--top-filters.mb-2
-					.col-sm-6
+					.col-6.col-sm-6
 						label Sort By:
 						.select
 							select(ng-model="resultsOrder")
@@ -17,12 +17,7 @@ section(style="padding-top: 140px;")
 								option(value="cost") Cost
 							.select_arrow
 
-						//- select(ng-model="resultsOrder")
-						//- 	option(value="town") Town
-						//- 	option(value="county") County
-						//- 	option(value="id") Id
-						//- 	option(value="cost") Cost
-					.col-sm-6
+					.col-6.col-sm-6
 						label Results Per Page:
 						.select
 							select(ng-model="resultsAmount")
@@ -30,14 +25,6 @@ section(style="padding-top: 140px;")
 								option(value="5") 5
 								option(value="10") 10
 							.select_arrow
-
-
-
-
-						//- select(ng-model="resultsAmount")
-						//- 	option(value="2") 2
-						//- 	option(value="5") 5
-						//- 	option(value="10") 10
 
 
 
@@ -49,7 +36,7 @@ section(style="padding-top: 140px;")
 									img(ng-src="assets/{{ home.image }}" alt="Home Image")
 
 								.col-md-7
-									h5.cottage-name {{ home.name }}
+									h4.cottage-name {{ home.name }}
 									h6.cottage-town {{ home.town }}, {{ home.county }}
 									p.mb-2.font-weight-400
 										span.mr-1 Sleeps: {{ home.sleeps }}
@@ -60,21 +47,21 @@ section(style="padding-top: 140px;")
 											span.ion.ion-star.d-inline-block(ng-repeat="i in getRating(home.rating) track by $index")
 									hr.mb-1
 									.row.results--features.no-gutters
-										.col-md-4
+										.col-md-4.col-12
 											p
 												span.ion.mr-1(ng-class="home.features.pets ? 'ion-checkmark' : 'ion-close'")
 												| Pets Allowed
 											p
 												span.ion.mr-1(ng-class="home.features.wifi ? 'ion-checkmark' : 'ion-close'")
 												| Wifi
-										.col-md-4
+										.col-md-4.col-12
 											p
 												span.ion.mr-1(ng-class="home.features.swimming ? 'ion-checkmark' : 'ion-close'")
 												| Swimming Pool
 											p
 												span.ion.mr-1(ng-class="home.features.washing ? 'ion-checkmark' : 'ion-close'")
 												| Washing
-										.col-md-4
+										.col-md-4.col-12
 											p
 												span.ion.mr-1(ng-class="home.features.fireplace ? 'ion-checkmark' : 'ion-close'")
 												| Fireplace
@@ -86,7 +73,7 @@ section(style="padding-top: 140px;")
 									.row.align-items-center
 										.col-md-6
 											p.mb-0 {{ curFilters.nights }} nights
-											h5 From £{{ home.cost * curFilters.nights }}
+											h5.results--price From £{{ home.cost * curFilters.nights }}
 										.col-md-6.text-right
 											a(href="#!/details/{{home.id}}")
 												button.btn View and Book

@@ -14,14 +14,14 @@
 
 							//- select.mb-2(ng-model="curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'" name='location')
 
-						.col-md-4.col-lg-12.gutter--sm
+						.col-6.col-sm-6.col-md-4.col-lg-12.gutter--sm
 							label.mb-1 Start Date
 							.input-group.form--results-date.mb-2(moment-picker="$root.curFilters.dates.dateStart" format="YYYY-MM-DD" min-date="$root.curFilters.dates.dateToday" max-date="$root.curFilters.dates.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
 								span.input-group-addon
 									i.ion.ion-calendar
 								input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateStart" ng-model-options="{ updateOn: 'blur' }")
 
-						.col-md-4.col-lg-12.gutter--sm
+						.col-6.col-sm-6.col-md-4.col-lg-12.gutter--sm
 							label.mb-1 End Date
 							.input-group.form--results-date(moment-picker="$root.curFilters.dates.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.curFilters.dates.dateStart" change="$root.pickerChange()")
 								span.input-group-addon
@@ -88,7 +88,7 @@
 								.control_indicator
 
 
-					.col-sm-6.col-md-2.col-lg-12.gutter--sm
+					.col-6.col-sm-6.col-md-2.col-lg-12.gutter--sm
 						.result--filter-box--inner.mb-2
 							label.mb-1 Bedrooms
 
@@ -118,7 +118,7 @@
 								.control_indicator
 
 
-					.col-sm-6.col-md-3.col-lg-12.gutter--sm
+					.col-6.col-sm-6.col-md-3.col-lg-12.gutter--sm
 						.result--filter-box--inner.mb-2
 							label.mb-1 Customer Rating
 
