@@ -68,16 +68,44 @@ section(style="padding-top: 140px;")
 			.col-md-6
 				//- img.w-100(ng-src="assets/{{cottage.image}}")
 				#carouselExampleControls.carousel.slide(data-ride="carousel")
-					.carousel-inner(role="listbox")
-						.carousel-item.active
-							img.d-block.img-fluid(src="assets/{{cottage.image}}" alt="First slide")
-						.carousel-item
-							img.d-block.img-fluid(src="assets/{{cottage.image}}" alt="Second slide")
+					.carousel-inner.mb-2(role="listbox")
 
-					a.carousel-control-prev(href="#carouselExampleControls" role="button" data-slide="prev")
-						span.carousel-control-prev-icon(aria-hidden="true")
-					a.carousel-control-next(href="#carouselExampleControls" role="button" data-slide="next")
-						span.carousel-control-next-icon(aria-hidden="true")
+						.carousel-item(ng-repeat="image in cottage.images track by $index" ng-class="{ 'active': $index == 0}")
+							img.d-block.img-fluid(src="assets/detail-imgs/{{image}}")
+
+						//- .carousel-item.active
+						//- 	img.d-block.img-fluid(src="assets/{{cottage.image}}" alt="First slide")
+						//- .carousel-item
+						//- 	img.d-block.img-fluid(src="assets/{{cottage.image}}" alt="Second slide")
+
+						span.carousel-control-prev.carousel-control(href="#carouselExampleControls" role="button" data-slide="prev")
+							span.carousel-control-prev-icon(aria-hidden="true")
+						span.carousel-control-next.carousel-control(href="#carouselExampleControls" role="button" data-slide="next")
+							span.carousel-control-next-icon(aria-hidden="true")
+
+
+
+					ul.carousel-indicators.list-inline
+						li.list-inline-item(ng-repeat="image in cottage.images track by $index" data-slide-to='$index', data-target='#carouselExampleControls' ng-class="{ 'active': $index == 0}")
+							a
+								img.img-fluid(ng-src="assets/detail-imgs/{{image}}")
+
+					//- ul.carousel-indicators
+					//- 	li.active(data-slide-to='0', data-target='#carouselExampleControls')
+					//- 		a.selected
+					//- 			img(src='http://placehold.it/80x60&text=one')
+					//- 	li(data-slide-to='1', data-target='#carouselExampleControls')
+					//- 		a
+					//- 			img(src='http://placehold.it/80x60&text=two')
+					//- 	li(data-slide-to='2', data-target='#carouselExampleControls')
+					//- 		a
+					//- 			img(src='http://placehold.it/80x60&text=three')
+					//- 	li(data-slide-to='3', data-target='#carouselExampleControls')
+					//- 		a
+					//- 			img(src='http://placehold.it/80x60&text=four')
+					//- 	li(data-slide-to='3', data-target='#carouselExampleControls')
+					//- 		a
+					//- 			img(src='http://placehold.it/80x60&text=four')
 
 
 		.row
@@ -90,3 +118,17 @@ section(style="padding-top: 140px;")
 					p Vis nihil voluptua et, no sit quidam feugait. Vix ei sale dicunt prompta, ei omnis incorrupte vituperatoribus qui, eu mei delenit dolorum definitiones. No vidisse iuvaret nominavi cum. Mel delicata reprehendunt no, choro soleat gloriatur ei eam, probo incorrupte ex duo. Verear accommodare qui no.
 
 					p Ut munere voluptatum eos, nam ne ludus volumus moderatius, an est saepe eruditi. Id vivendo explicari mea. Te sed soluta eleifend. Tale noluisse ullamcorper ut duo. Purto vide denique est te, quo wisi possit id, eu sint habemus expetendis ius. Eu pri laudem perpetua consulatu, vix id ubique neglegentur. Vix ut semper luptatum molestiae, nam in magna paulo voluptatibus.
+
+		script.
+			$('.carousel').carousel({
+				interval: 5000,
+				pause: "hover",
+				wrap: true
+			})
+			.on('click', '.carousel-control', handle_nav);
+
+			var handle_nav = function(e) {
+				e.preventDefault();
+				var nav = $(this);
+				nav.parents('.carousel').carousel(nav.data('slide'));
+			}
