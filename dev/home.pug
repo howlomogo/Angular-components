@@ -8,7 +8,7 @@
 			.col-sm-3
 
 				.select
-					select.banner--input.banner--select(ng-model="$root.curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'")
+					select.banner--input.banner--select(ng-model="$root.curFilters.location" ng-options="home.county as home.county for home in properties | unique: 'county'")
 						option(value="") All
 					.select_arrow
 
@@ -37,40 +37,49 @@ section#inspiration.inspiration-section.text-center
 	.container
 		.row.gutter--small
 			.col-md-6.col-lg-4.gutter--sm
-				.inspiration--box(style="background-image: url('assets/inspiration/scotland.jpg');")
+				.inspiration--box(style="background-image: url('assets/inspiration/yorkshire.jpg');" ng-click="gotoResults('results', 'yorkshire')")
 					.inspiration--box-text
 						h4.font-weight-500 DISCOVER
-						h4.font-weight-300 Scotland
+						h4.font-weight-300 Yorkshire
 						hr.hr
 						p View cottages
+					.inspiration--overlay
 			.col-md-6.col-lg-4.gutter--sm
-				.inspiration--box(style="background-image: url('assets/inspiration/relax.jpg');")
+				.inspiration--box(style="background-image: url('assets/inspiration/relax.jpg');" ng-click="gotoResults('results', null)")
 					.inspiration--box-text
 						h4.font-weight-500 RELAXING
 						h4.font-weight-300 Cottages
 						hr.hr
 						p View cottages
+					.inspiration--overlay
+
 			.col-md-6.col-lg-4.gutter--sm
-				.inspiration--box(style="background-image: url('assets/inspiration/wales.jpg');")
+				.inspiration--box(style="background-image: url('assets/inspiration/kent.jpg');" ng-click="gotoResults('results', 'kent')")
 					.inspiration--box-text
 						h4.font-weight-500 EXPERIENCE
-						h4.font-weight-300 Wales
+						h4.font-weight-300 Kent
 						hr.hr
 						p View cottages
+					.inspiration--overlay
+
 			.col-md-6.col-lg-8.gutter--sm
-				.inspiration--box(style="background-image: url('assets/inspiration/iow.jpg');")
+				.inspiration--box(style="background-image: url('assets/inspiration/iow.jpg');" ng-click="gotoResults('results', 'isle of wight')")
 					.inspiration--box-text
 						h4.font-weight-500 EXPLORE
 						h4.font-weight-300 The Isle Of Wight
 						hr.hr
 						p View cottages
+					.inspiration--overlay
+
 			.col-md-12.col-lg-4.gutter--sm
-				.inspiration--box(style="background-image: url('assets/inspiration/cornwall.jpg');")
+				.inspiration--box(style="background-image: url('assets/inspiration/cornwall.jpg');" ng-click="gotoResults('results', 'cornwall')")
 					.inspiration--box-text
 						h4.font-weight-500 SURFING
 						h4.font-weight-300 In Cornwall
 						hr.hr
 						p View cottages
+					.inspiration--overlay
+
 
 section#about.about-section
 	.container

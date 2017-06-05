@@ -46,7 +46,6 @@ angular.module('app', ['angular.filter', 'ngRoute', 'moment-picker', 'angularUti
 
     $rootScope.changeLocation = function(town) {
         $rootScope.curFilters.location = town;
-        console.log(town);
 
         //- null = All
         if(town === null) {

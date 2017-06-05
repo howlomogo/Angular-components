@@ -17,6 +17,8 @@ angular.module('app').controller('resultsController', ['$scope', '$rootScope', '
 
 	$scope.nights = 0;
 
+	$scope.filteredAmount = 0;
+
 	$scope.filterOptions = {
 		costCb: {
 			c0: true,
