@@ -1,12 +1,12 @@
 section(style="padding-top: 140px;")
-	.container-fluid
-		.row.mb-4
-			.col-md-6
+	.container
+		.row
+			.col-lg-6
 				.details--main
 					.row.mb-2
 						.col-md-12.col-lg-8
-							h3.cottage-name.color--500 {{ cottage.name }}
-							h5.cottage-town {{ cottage.town }}, {{ cottage.county }}
+							h4.mb-1.cottage-name.color--500 {{ cottage.name }}
+							h6.cottage-town {{ cottage.town }}, {{ cottage.county }}
 						.col-md-12.col-lg-4.text-center
 							h6.mt-1 Customer Rating
 							span.ion.ion-star.d-inline-block(ng-repeat="i in getRating(cottage.rating) track by $index")
@@ -17,98 +17,100 @@ section(style="padding-top: 140px;")
 						p Vis nihil voluptua et, no sit quidam feugait. Vix ei sale dicunt prompta, ei omnis incorrupte vituperatoribus qui, eu mei delenit dolorum definitiones. No vidisse iuvaret nominavi cum. Mel delicata reprehendunt no, choro soleat gloriatur ei eam, probo incorrupte ex duo. Verear accommodare qui no.
 
 						p Ut munere voluptatum eos, nam ne ludus volumus moderatius, an est saepe eruditi. Id vivendo explicari mea. Te sed soluta eleifend. Tale noluisse ullamcorper ut duo. Purto vide denique est te, quo wisi possit id, eu sint habemus expetendis ius. Eu pri laudem perpetua consulatu, vix id ubique neglegentur. Vix ut semper luptatum molestiae, nam in magna paulo voluptatibus.
-					a
-						span.mr-1 Read More
-						span.ion.ion-chevron-right
-					hr.my-4
+					.mb-3
+						a.read--more(ng-click="scrollTo('detailsabout')")
+							span.mr-1 Read More
+							span.ion.ion-chevron-right
+					hr.mb-4.mt-0
 					.row.text-center
-						.col-md-6
+						.col-6
 							h6 Sleeps
 							h4 {{ cottage.sleeps }}
 
-						.col-md-6
+						.col-6
 							h6 Bedrooms
 							h4 {{ cottage.bedrooms }}
 
-				.p-4.mb-2(style="background-color: #ffffff;")
+
+				.p-4.bg--white.details--dates.mb-2
+					.row.text-center
+						.col-6
+							h6 From
+							h5 {{ formatDate(curFilters.dates.dateStart) }}
+						.col-6
+							h6 To
+							h5 {{ formatDate(curFilters.dates.dateEnd) }}
+
 					.row
-						.col-md-4
-							p.mb-1
-								span.ion.mr-1(ng-class="cottage.features.pets ? 'ion-checkmark' : 'ion-close'")
-								| Pets Allowed
-							p.mb-1
-								span.ion.mr-1(ng-class="cottage.features.wifi ? 'ion-checkmark' : 'ion-close'")
-								| Wifi
+						.col-md-12
+							hr.mb-2.mt-0
 
-						.col-md-4
-							p.mb-1
-								span.ion.mr-1(ng-class="cottage.features.swimming ? 'ion-checkmark' : 'ion-close'")
-								| Swimming Pool
-							p.mb-1
-								span.ion.mr-1(ng-class="cottage.features.washing ? 'ion-checkmark' : 'ion-close'")
-								| Washing Machine
-
-						.col-md-4
-							p.mb-1
-								span.ion.mr-1(ng-class="cottage.features.fireplace ? 'ion-checkmark' : 'ion-close'")
-								| Fireplace
-							p.mb-1
-								span.ion.mr-1(ng-class="cottage.features.hottub ? 'ion-checkmark' : 'ion-close'")
-								| Hot Tub
-
-				.p-4(style="background-color: #ffffff;")
-					.row.align-items-center
-						.col-md-6
-							h5 £ {{ cottage.cost * curFilters.nights }}
-							h6 For {{ curFilters.nights }} nights
-							h6 From {{ curFilters.dates.dateStart }} to {{ curFilters.dates.dateEnd }}
-						.col-md-6.text-right
+					.row.align-items-center.text-center
+						.col-md-12
+							h4.mb-0.results--price £ {{ cottage.cost * curFilters.nights }}
+							p.font--small.mb-2(style="margin-bottom: 4px;") For {{ curFilters.nights }} nights
 							button.btn Book Now
 
-			.col-md-6
-				//- img.w-100(ng-src="assets/{{cottage.image}}")
-				#carouselExampleControls.carousel.slide(data-ride="carousel")
+
+
+
+			.col-lg-6
+				#carousel.carousel.slide.mb-2(data-ride="carousel")
 					.carousel-inner.mb-2(role="listbox")
 
-						.carousel-item(ng-repeat="image in cottage.images track by $index" ng-class="{ 'active': $index == 0}")
-							img.d-block.img-fluid(src="assets/detail-imgs/{{image}}")
+						.carousel-item.active
+							div(style="width:100%; padding-top: 61.111111%; position: relative; background-image: url('assets/{{cottage.image}}'); background-size: cover;")
 
-						//- .carousel-item.active
-						//- 	img.d-block.img-fluid(src="assets/{{cottage.image}}" alt="First slide")
-						//- .carousel-item
-						//- 	img.d-block.img-fluid(src="assets/{{cottage.image}}" alt="Second slide")
+						.carousel-item(ng-repeat="image in cottage.images track by $index")
+							div(style="width:100%; padding-top: 61.111111%; position: relative; background-image: url('assets/detail-imgs/{{image}}'); background-size: cover;")
 
-						span.carousel-control-prev.carousel-control(href="#carouselExampleControls" role="button" data-slide="prev")
+						span.carousel-control-prev.carousel-control(href="#carousel" role="button" data-slide="prev")
 							span.carousel-control-prev-icon(aria-hidden="true")
-						span.carousel-control-next.carousel-control(href="#carouselExampleControls" role="button" data-slide="next")
+						span.carousel-control-next.carousel-control(href="#carousel" role="button" data-slide="next")
 							span.carousel-control-next-icon(aria-hidden="true")
 
 
 
 					ul.carousel-indicators.list-inline
-						li.list-inline-item(ng-repeat="image in cottage.images track by $index" data-slide-to='$index', data-target='#carouselExampleControls' ng-class="{ 'active': $index == 0}")
+
+						li.list-inline-item.active(data-slide-to='0', data-target='#carousel')
+							a
+								img.img-fluid(ng-src="assets/{{cottage.image}}")
+
+						li.list-inline-item(ng-repeat="image in cottage.images track by $index" data-slide-to='{{$index + 1}}', data-target='#carousel')
 							a
 								img.img-fluid(ng-src="assets/detail-imgs/{{image}}")
 
-					//- ul.carousel-indicators
-					//- 	li.active(data-slide-to='0', data-target='#carouselExampleControls')
-					//- 		a.selected
-					//- 			img(src='http://placehold.it/80x60&text=one')
-					//- 	li(data-slide-to='1', data-target='#carouselExampleControls')
-					//- 		a
-					//- 			img(src='http://placehold.it/80x60&text=two')
-					//- 	li(data-slide-to='2', data-target='#carouselExampleControls')
-					//- 		a
-					//- 			img(src='http://placehold.it/80x60&text=three')
-					//- 	li(data-slide-to='3', data-target='#carouselExampleControls')
-					//- 		a
-					//- 			img(src='http://placehold.it/80x60&text=four')
-					//- 	li(data-slide-to='3', data-target='#carouselExampleControls')
-					//- 		a
-					//- 			img(src='http://placehold.it/80x60&text=four')
+
+				.bg--white.details--features.mb-2
+					.row
+						.col-lg-4.col-12
+							p
+								span.ion.mr-1(ng-class="cottage.features.pets ? 'ion-checkmark' : 'ion-close'")
+								| Pets Allowed
+							p
+								span.ion.mr-1(ng-class="cottage.features.wifi ? 'ion-checkmark' : 'ion-close'")
+								| Wifi
+
+						.col-lg-4.col-12
+							p
+								span.ion.mr-1(ng-class="cottage.features.swimming ? 'ion-checkmark' : 'ion-close'")
+								| Swimming Pool
+							p
+								span.ion.mr-1(ng-class="cottage.features.washing ? 'ion-checkmark' : 'ion-close'")
+								| Washing Machine
+
+						.col-lg-4.col-12
+							p
+								span.ion.mr-1(ng-class="cottage.features.fireplace ? 'ion-checkmark' : 'ion-close'")
+								| Fireplace
+							p
+								span.ion.mr-1(ng-class="cottage.features.hottub ? 'ion-checkmark' : 'ion-close'")
+								| Hot Tub
 
 
-		.row
+
+		#detailsabout.row
 			.col-md-12
 				.details--about
 					h3 About {{ cottage.name }}

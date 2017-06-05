@@ -1,4 +1,4 @@
-angular.module('app').controller('detailsController', ['$scope', '$rootScope', '$window', '$location', '$routeParams', function($scope, $rootScope, $window, $location, $routeParams) {
+angular.module('app').controller('detailsController', ['$scope', '$rootScope', '$window', '$location', '$routeParams', '$anchorScroll', function($scope, $rootScope, $window, $location, $routeParams, $anchorScroll) {
 
 	$scope.cottage = {};
 
@@ -14,6 +14,16 @@ angular.module('app').controller('detailsController', ['$scope', '$rootScope', '
 				$scope.cottage = $rootScope.properties[i];
 			}
 		}
+	}
+
+	$scope.formatDate = function(date) {
+		var formattedDate = moment(date).format("Do MMM YYYY");
+		return formattedDate;
+	}
+
+	$scope.scrollTo = function(id) {
+		$location.hash(id);
+		$anchorScroll();
 	}
 
 	init();

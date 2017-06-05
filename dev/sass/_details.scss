@@ -1,4 +1,7 @@
 .details--main {
+
+			font-size: 0.85rem;
+
 	@extend .p-4;
 	@extend .mb-2;
 	background-color: #ffffff;
@@ -14,19 +17,64 @@
 	h4 {
 		color: $color--500;
 	}
-
-	p {
-	}
 }
 
-
+.read--more {
+	color: $color--500 !important;
+	cursor: pointer;
+}
 .details--about {
+
+	p {
+		font-size: 0.85rem;
+	}
 	background-color: #ffffff;
 	@extend .p-4;
-	@extend .mb-4;
+	@extend .mb-6;
 
 	h3 {
 		font-weight: 300;
 		color: $color--500;
+	}
+
+	@media (max-width: 992px) {
+		text-align: center;
+
+		hr {
+			margin: 0 auto 16px !important;
+		}
+	}
+}
+
+.details--dates {
+	h5 {
+		color: $color--500;
+		@extend .mb-2;
+
+		@media (max-width: 992px) {
+			font-size: 1rem;
+		}
+	}
+}
+
+.details--features {
+
+	padding: 32px 32px 24px;
+
+	.col-12 {
+		@media (max-width: 992px) {
+			text-align: center;
+		}
+	}
+
+	p {
+		font-size: 0.85rem;
+    	display: inline-block;
+    	width: 160px;
+    	@extend .mb-1;
+
+		@media (max-width: 992px) {
+			text-align: center;
+		}
 	}
 }

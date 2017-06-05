@@ -27,6 +27,14 @@ $color--900: #263238;
 	color: $color--500;
 }
 
+.font--small {
+	font-size: 0.85rem;
+}
+
+.bg--white {
+	background-color: #ffffff;
+}
+
 .font-weight-300 {
 	font-weight: 300;
 }
@@ -46,6 +54,16 @@ $color--900: #263238;
 
 .container-fluid {
 	max-width: 1440px;
+}
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+.flex-container {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
 }
 
 body {
