@@ -23,6 +23,10 @@ $color--900: #263238;
 @import "results";
 @import "details";
 
+select {
+    text-transform: capitalize;
+}
+
 .color--500 {
 	color: $color--500;
 }

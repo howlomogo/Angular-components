@@ -9,7 +9,7 @@ angular.module('app').controller('resultsController', ['$scope', '$rootScope', '
 	$scope.selectedProperty = 2;
 
 	$scope.resultsOrder = 'cost';
-	$scope.resultsAmount = "2";
+	$scope.resultsAmount = "10";
 
 	$scope.sleepsFilter = 2;
 

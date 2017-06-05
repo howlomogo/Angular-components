@@ -28,7 +28,7 @@ section.mt-4
 
 
 
-				.row(dir-paginate="home in properties | orderBy : resultsOrder | filter: locationFilter | filter: featureFilter | filter: costFilter | filter: bedroomFilter | filter:ratingFilter | itemsPerPage: resultsAmount | filter:query as filtered")
+				.row(dir-paginate="home in properties | orderBy : resultsOrder | filter: $root.changeLocation($root.curFilters.location) | filter: featureFilter | filter: costFilter | filter: bedroomFilter | filter:ratingFilter | itemsPerPage: resultsAmount | filter:query as filtered")
 					.col-md-12
 						.results--cottage-section
 							.row.align-items-center

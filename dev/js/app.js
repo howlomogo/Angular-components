@@ -31,7 +31,7 @@ angular.module('app', ['angular.filter', 'ngRoute', 'moment-picker', 'angularUti
     var dateEnd = moment().add(7, 'd');
 
     $rootScope.curFilters = {
-        location: "hampshire",
+        location: "",
         dates: {
             dateToday: dateToday,
             dateStart: dateStart,
@@ -42,6 +42,21 @@ angular.module('app', ['angular.filter', 'ngRoute', 'moment-picker', 'angularUti
 
 
     $rootScope.curFilters.nights = $rootScope.curFilters.dates.dateEnd.diff($rootScope.curFilters.dates.dateStart, 'days');
+
+
+    $rootScope.changeLocation = function(town) {
+        $rootScope.curFilters.location = town;
+        console.log(town);
+
+        //- null = All
+        if(town === null) {
+            return true;
+        }
+
+        else {
+            return town;
+        }
+    }
 
     $rootScope.pickerChange = function() {
         
