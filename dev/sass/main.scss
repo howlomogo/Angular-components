@@ -206,27 +206,8 @@ label {
 	position: relative;
 	// bottom: 0;
 	width: 100%;
-	background-color: $color--500;
+	background-color: $color--900;
 	@extend .p-4;
-
-
-	.btn {
-		border-radius: 0px;
-	}
-
-	input, select, .btn {
-		height: 50px;
-	}
-
-	select {
-    	border-top-left-radius: 5px;
-    	border-bottom-left-radius: 5px;
-	}
-
-	.btn {
-    	border-top-right-radius: 5px;
-    	border-bottom-right-radius: 5px;
-	}
 
 	p {
 		@extend .mb-0;
@@ -284,6 +265,8 @@ label {
 
 
 .inspiration-section {
+
+	@extend .py-8;
 	h3 {
 		letter-spacing: 2px;
 	}
@@ -322,16 +305,24 @@ label {
 .about-section {
 	background-image: url('../assets/about-bg.jpg');
 	background-size: cover;
-	@extend .p-8;
+	@extend .py-8;
 	color: $color--50;
 
 	h3 {
 		letter-spacing: 2px;
 	}
+
+	@media (max-width: 992px) {
+		text-align: center;	
+		.hr {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+	}
 }
 
 .about-section--bottom {
-	@extend .p-8;
+	@extend .py-8;
 	text-align: center;
 
 	h6 {
@@ -348,7 +339,7 @@ label {
 	background-image: url('../assets/offer-bg.jpg');
 	background-size: cover;
 	text-align: center;
-	@extend .p-8;
+	@extend .py-8;
 	color: $color--50;
 
 	h3 {
@@ -366,13 +357,20 @@ label {
 		width: 100%;
 	}
 
-	.input-group > .input-group-addon {
-		padding: 0px !important;
-		border: none;
+	@media (max-width: 768px) {
 
-		.btn {
-    		border-top-left-radius: 0px;
-    		border-bottom-left-radius: 0px;
+		p, h5 {
+			text-align: center !important;
 		}
 	}
+
+	// .input-group > .input-group-addon {
+	// 	padding: 0px !important;
+	// 	border: none;
+
+	// 	.btn {
+ //    		border-top-left-radius: 0px;
+ //    		border-bottom-left-radius: 0px;
+	// 	}
+	// }
 }

@@ -152,3 +152,77 @@
         }
     }
 }
+
+//- Home page
+
+.banner--select {
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+
+    @media (max-width: 576px) {
+        border-radius: 0px !important;
+    }
+}
+
+.banner--date {
+    border-radius: 0px !important;
+    color: #757575;
+    padding: 8px 16px;
+    border: 1px solid #E0E0E0;
+    outline: none;
+}
+
+.banner--search {
+    @media (max-width: 576px) {
+        border-radius: 0px !important;
+    }
+}
+
+.banner--input {
+    height: 50px;
+    @media (max-width: 576px) {
+        margin-bottom: 8px;
+    }
+}
+
+.banner--search-btn {
+    background-color: $color--800 !important;
+    height: 50px;
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+}
+
+//-
+
+.footer--input {
+    background-color: $color--100 !important;
+    height: 50px;
+    border-radius: 0px !important;
+    color: $color--700 !important;
+    padding: 8px 16px;
+    border: 1px solid $color--400;
+    outline: none;
+    border-bottom-left-radius: 5px !important;
+    border-top-left-radius: 5px !important;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color--400 !important;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+    color: $color--400 !important;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+    color: $color--400 !important;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+    color: $color--400 !important;
+    }
+
+}
+
+.footer--subscribe {
+    height: 50px;
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    background-color: $color--800 !important;
+}

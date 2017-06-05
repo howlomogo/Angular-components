@@ -5,25 +5,28 @@
 .banner--search
 	.container.container-small
 		.row.no-gutters.mb-2
-			.col-md-3
-				select(ng-model="curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'")
-			.col-md-3
-				.input-group(moment-picker="$root.curFilters.dates.dateStart" format="YYYY-MM-DD" min-date="$root.curFilters.dates.dateToday" max-date="$root.curFilters.dates.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
-					input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateStart" ng-model-options="{ updateOn: 'blur' }")
+			.col-sm-3
+
+				.select
+					select.banner--input.banner--select(ng-model="curFilters.location" ng-options="x.county as x.county for x in properties | unique: 'county'")
+					.select_arrow
+
+			.col-sm-3
+				.input-group.banner--input(moment-picker="$root.curFilters.dates.dateStart" format="YYYY-MM-DD" min-date="$root.curFilters.dates.dateToday" max-date="$root.curFilters.dates.dateEnd" start-view="month" today="true" change="$root.pickerChange()")
+					input.banner--date.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateStart" ng-model-options="{ updateOn: 'blur' }")
 
 
-			.col-md-3
-				.input-group(moment-picker="$root.curFilters.dates.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.curFilters.dates.dateStart" change="$root.pickerChange()")
-					input.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateEnd" ng-model-options="{ updateOn: 'blur' }")
+			.col-sm-3
+				.input-group.banner--input(moment-picker="$root.curFilters.dates.dateEnd" format="YYYY-MM-DD" start-view="month" min-date="$root.curFilters.dates.dateStart" change="$root.pickerChange()")
+					input.banner--date.form-control(placeholder="Select a date" ng-model="$root.curFilters.dates.dateEnd" ng-model-options="{ updateOn: 'blur' }")
 
-				//- select(ng-model="curFilters.nights" ng-options="o as o for o in nightList | unique: 'county'")
-			.col-md-3
-				button.btn.w-100(ng-click="gotoResults('results')") Search
+			.col-sm-3
+				button.banner--search-btn.btn.w-100(ng-click="gotoResults('results')") Search
 		.row.text-center
 			.col-md-12
 				p Fill out the form above to view our avaliable holiday cottages
 
-section#inspiration.inspiration-section.p-8.text-center
+section#inspiration.inspiration-section.text-center
 	.container.container-small
 		.row
 			.col-md-12
@@ -32,35 +35,35 @@ section#inspiration.inspiration-section.p-8.text-center
 				p.mb-6 Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut. Saepe commune gubergren ex his.
 	.container
 		.row.gutter--small
-			.col-md-4.gutter--sm
+			.col-md-6.col-lg-4.gutter--sm
 				.inspiration--box(style="background-image: url('assets/inspiration/scotland.jpg');")
 					.inspiration--box-text
 						h4.font-weight-500 DISCOVER
 						h4.font-weight-300 Scotland
 						hr.hr
 						p View cottages
-			.col-md-4.gutter--sm
+			.col-md-6.col-lg-4.gutter--sm
 				.inspiration--box(style="background-image: url('assets/inspiration/relax.jpg');")
 					.inspiration--box-text
 						h4.font-weight-500 RELAXING
 						h4.font-weight-300 Cottages
 						hr.hr
 						p View cottages
-			.col-md-4.gutter--sm
+			.col-md-6.col-lg-4.gutter--sm
 				.inspiration--box(style="background-image: url('assets/inspiration/wales.jpg');")
 					.inspiration--box-text
 						h4.font-weight-500 EXPERIENCE
 						h4.font-weight-300 Wales
 						hr.hr
 						p View cottages
-			.col-md-8.gutter--sm
+			.col-md-6.col-lg-8.gutter--sm
 				.inspiration--box(style="background-image: url('assets/inspiration/iow.jpg');")
 					.inspiration--box-text
 						h4.font-weight-500 EXPLORE
 						h4.font-weight-300 The Isle Of Wight
 						hr.hr
 						p View cottages
-			.col-md-4.gutter--sm
+			.col-md-12.col-lg-4.gutter--sm
 				.inspiration--box(style="background-image: url('assets/inspiration/cornwall.jpg');")
 					.inspiration--box-text
 						h4.font-weight-500 SURFING
@@ -71,7 +74,7 @@ section#inspiration.inspiration-section.p-8.text-center
 section.about-section
 	.container
 		.row
-			.col-md-6
+			.col-lg-6
 				h3 ABOUT US
 				hr.hr.hr--left
 				p Lorem ipsum dolor sit amet, solum consequat tincidunt mel id. Ne illud consectetuer sed. Pri facete lucilius consetetur an, sea te pertinax instructior, cum no vide assum moderatius. Agam graece noster sea eu.
@@ -81,23 +84,26 @@ section.about-section
 section.about-section--bottom
 	.container
 		.row
-			.col-md-4
+			.col-lg-4
 				img(src="assets/star.svg")
 				h6 15 YEARS SERVICE
 				hr.hr
-				p Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut.
+				.px-2
+					p.mb-4 Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut.
 
-			.col-md-4
+			.col-lg-4
 				img(src="assets/advisor.svg")
 				h6 EXPERIENCED ADVISORS
 				hr.hr
-				p Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut.
+				.px-2
+					p.mb-4 Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut.
 
-			.col-md-4
+			.col-lg-4
 				img(src="assets/heart.svg")
 				h6 CUSTOMER SATISFACTION
 				hr.hr
-				p Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut.
+				.px-2
+					p.mb-4 Pro ad quis mundi nobis. Eum perfecto pericula delicatissimi et. Ei sint animal complectitur est, dicam verear pri in, pri vitae contentiones ut.
 
 section.offer-section
 	.container
@@ -105,7 +111,7 @@ section.offer-section
 			.col-md-12
 				h3 DEALS &amp; OFFERS
 				hr.hr
-				p Looking to get away in the next few weeks?
+				p.mb-4 Looking to get away in the next few weeks?
 					br
 					| We currently have a range of cottages offered at reduced rates
 				button.btn.inverted View Deals
