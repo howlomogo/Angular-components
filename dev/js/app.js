@@ -18,7 +18,8 @@ angular.module('app', ['angular.filter', 'ngRoute', 'moment-picker', 'angularUti
 .run(function($rootScope, $http) {
 	$http({
 		method: 'GET',
-		url: 'http://localhost:7888/js/properties.json' // need to change
+        url: './js/properties.json' // need to change
+		// url: 'http://localhost:7888/js/properties.json' // need to change
 	}).then(function successCallback(response) {
 		$rootScope.properties = response.data;
 
