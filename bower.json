@@ -1,12 +1,12 @@
 {
-  "name": "dist",
-  "homepage": "https://github.com/howlomogo/Arko",
+  "name": "angular-components",
+  "description": "Setup:",
+  "main": "gulpfile.js",
   "authors": [
-    "Matt Pilcher <mattpilcher87@gmail.com>"
+    "Matt Pilcher"
   ],
-  "description": "",
-  "main": "",
-  "license": "MIT",
+  "license": "ISC",
+  "homepage": "https://github.com/howlomogo/Angular-components",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -15,10 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.2.1",
     "bootstrap": "v4.0.0-alpha.6",
-    "angular": "^1.6.4"
-  },
-  "overrides": {
+    "angular": "^1.6.5"
   }
 }

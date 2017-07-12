@@ -1,4 +1,4 @@
-# Cottage Getaways Website
+# Angular Components
 
 Setup:
 
