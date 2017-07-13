@@ -1,6 +1,7 @@
 /node_modules
 /dist
 /bower_components/
+/notes
 
 .DS_Store
 */.DS_Store
